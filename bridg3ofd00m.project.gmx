@@ -32,6 +32,13 @@
     <sprites name="Environment">
       <sprites name="Blocks">
         <sprite>sprites\spr_solid</sprite>
+        <sprite>sprites\spr_solid1x2</sprite>
+        <sprite>sprites\spr_solid1x4</sprite>
+        <sprite>sprites\spr_solid1x8</sprite>
+        <sprite>sprites\spr_solid2x1</sprite>
+        <sprite>sprites\spr_solid2x2</sprite>
+        <sprite>sprites\spr_solid4x1</sprite>
+        <sprite>sprites\spr_solid8x1</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -72,13 +79,20 @@
     <objects name="Environment">
       <objects name="Blocks">
         <object>objects\obj_solid1x1</object>
+        <object>objects\obj_solid1x2</object>
+        <object>objects\obj_solid1x4</object>
+        <object>objects\obj_solid1x8</object>
+        <object>objects\obj_solid2x1</object>
+        <object>objects\obj_solid2x2</object>
+        <object>objects\obj_solid4x1</object>
+        <object>objects\obj_solid8x1</object>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_bridge1</room>
     <room>rooms\rm_bossRoom</room>
-    <room>rooms\rm_init</room>
+    <room>rooms\rm_pits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
