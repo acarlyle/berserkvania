@@ -29,6 +29,11 @@
     <sprite>sprites\spr_dashBoxUsed</sprite>
     <sprite>sprites\sprite18</sprite>
     <sprite>sprites\spr_greatSword</sprite>
+    <sprites name="Environment">
+      <sprites name="Blocks">
+        <sprite>sprites\spr_solid</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -44,6 +49,9 @@
     <script>scripts\src_drawHUD.gml</script>
   </scripts>
   <objects name="objects">
+    <objects name="Parents">
+      <object>objects\obj_solid</object>
+    </objects>
     <object>objects\obj_block_par</object>
     <object>objects\obj_block</object>
     <object>objects\obj_tri</object>
@@ -61,10 +69,16 @@
     <object>objects\oLighting</object>
     <object>objects\obj_music</object>
     <object>objects\obj_greatSword</object>
+    <objects name="Environment">
+      <objects name="Blocks">
+        <object>objects\obj_solid1x1</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_bridge1</room>
     <room>rooms\rm_bossRoom</room>
+    <room>rooms\rm_init</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
