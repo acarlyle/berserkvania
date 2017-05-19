@@ -41,6 +41,9 @@
         <sprite>sprites\spr_solid8x1</sprite>
       </sprites>
     </sprites>
+    <sprites name="Controllers">
+      <sprite>sprites\spr_controller</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -54,6 +57,13 @@
     <script>scripts\src_rotateBazooka.gml</script>
     <script>scripts\src_akbar.gml</script>
     <script>scripts\src_drawHUD.gml</script>
+    <scripts name="Settings">
+      <script>scripts\scr_applyScreenRes.gml</script>
+      <script>scripts\scr_setWindowScale.gml</script>
+    </scripts>
+    <scripts name="Visual">
+      <script>scripts\scr_drawGameSurface.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Parents">
@@ -88,11 +98,18 @@
         <object>objects\obj_solid8x1</object>
       </objects>
     </objects>
+    <objects name="Controllers">
+      <object>objects\obj_controller</object>
+    </objects>
+    <objects name="Camera">
+      <object>objects\obj_camera</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\initroom</room>
+    <room>rooms\rm_pits</room>
     <room>rooms\rm_bridge1</room>
     <room>rooms\rm_bossRoom</room>
-    <room>rooms\rm_pits</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

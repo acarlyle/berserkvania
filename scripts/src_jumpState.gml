@@ -17,7 +17,7 @@ if (m_x && m_canShoot){ //shooting
 }
 
 if (m_airborn){ //exit jumpState
-    if (place_meeting(x, y+1, obj_block_par)){
+    if (place_meeting(x, y+1, obj_solid)){
         m_vspd = 0;
         m_airborn = false;
         m_state = src_moveState;
@@ -28,7 +28,7 @@ if (m_vspd < 10){
     m_vspd += m_grav;
 }
 
-if (place_meeting(x, y+1, obj_block_par)){ //we're on the floor
+if (place_meeting(x, y+1, obj_solid)){ //we're on the floor
     m_airborn = true;
     m_vspd = m_spaceBar * -m_jumpSpeed; 
 }
