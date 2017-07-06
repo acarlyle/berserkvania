@@ -32,6 +32,10 @@
     <sprites name="Environment">
       <sprites name="Blocks">
         <sprite>sprites\spr_solid</sprite>
+        <sprite>sprites\spr_triUpRight1x1</sprite>
+        <sprite>sprites\spr_triUpLeft1x1</sprite>
+        <sprite>sprites\spr_triDownLeft1x1</sprite>
+        <sprite>sprites\spr_triDownRight1x1</sprite>
         <sprite>sprites\spr_solid1x2</sprite>
         <sprite>sprites\spr_solid1x4</sprite>
         <sprite>sprites\spr_solid1x8</sprite>
@@ -96,6 +100,7 @@
         <object>objects\obj_solid2x2</object>
         <object>objects\obj_solid4x1</object>
         <object>objects\obj_solid8x1</object>
+        <object>objects\obj_triUpRight1x1</object>
       </objects>
     </objects>
     <objects name="Controllers">
