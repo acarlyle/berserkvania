@@ -25,6 +25,7 @@ else if (m_ctrl){
 }
 if (m_leftArrow){
     phy_position_x -= m_hspd;
+    m_cellX -= m_hspd;
     sprite_index = spr_playerLeft;
     m_facingLeft = true;
     m_facingRight = false;
@@ -33,6 +34,7 @@ if (m_leftArrow){
 }
 else if (m_rightArrow){
     phy_position_x += m_hspd;
+    m_cellX += m_hspd;
     sprite_index = spr_player;
     m_facingLeft = false;
     m_facingRight = true;

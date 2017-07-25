@@ -28,6 +28,21 @@
             <string>m_displayx = 0;
 m_displayy = 0;
 m_displayScale = 0;
+m_cellWidth = 180;
+m_cellHeight = 320;
+m_piecesUsed = 0;
+
+// Map generation
+global.map = ds_grid_create(1000, 1000);
+
+var rmX, rmY;
+for (rmX = 0; rmX &lt; 1000; rmX += 1){
+   for (rmY = 0; rmY &lt; 1000; rmY += 1){
+      global.map[rmX, rmY] = 0;
+   }
+}
+
+show_debug_message(global.map[500,500]);
 
 scr_applyScreenRes();
 room_goto(rm_pits);

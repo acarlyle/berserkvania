@@ -10,7 +10,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\sprite18</sprite>
+    <sprite>sprites\spr_mapPieces</sprite>
     <sprites name="Controllers">
       <sprite>sprites\spr_gotoRoom</sprite>
       <sprite>sprites\spr_controller</sprite>

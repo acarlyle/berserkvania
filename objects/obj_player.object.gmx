@@ -50,6 +50,26 @@ m_jumpSpeed = 6;
 m_vspd = 0;
 m_grav = .2;
 m_numDashes = 3;
+
+//player starting cell
+m_cellX = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
+m_cellY = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
+
+//draw map
+var color, piece, door, surf;
+m_surf = surface_create(64*27, 64*27);
+surface_set_target(m_surf);
+for(var yy=0; yy&lt;64; yy++){
+    for(var xx=0; xx&lt;64; xx++) {
+        if global.map[xx, yy] &amp; $C0 == 0 continue; //don't draw unknown rooms
+        if map[xx,yy] &amp; $80 color = $D08080
+        else color = $808080; //set the color if room is known
+        door = global.map[xx, yy] &gt;&gt; 4 &amp; 3;
+        piece = (global.map[xx, yy] &amp; 15) + door * m_piecesUsed; //you'd define pieces_used 
+        draw_sprite_ext(spr_mapPieces, piece, xx * 27, yy * 27, 1,1, color, 0, 1);
+    }
+}
+surface_reset_target();
 </string>
           </argument>
         </arguments>
@@ -155,6 +175,11 @@ m_state = src_moveState;
           <argument>
             <kind>1</kind>
             <string>script_execute(m_state);
+
+//player position
+global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8] |= $80;
+
+
 </string>
           </argument>
         </arguments>
@@ -245,6 +270,10 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
         draw_sprite(spr_dashBoxFull, -1, obj_player.x - 50 - offSet, obj_player.y - 70); 
     }
     offSet += 20;
+}
+
+if (surface_exists(m_surf)){
+    draw_surface(m_surf, obj_player.x + 10, obj_player.y + 10);
 }
 </string>
           </argument>
