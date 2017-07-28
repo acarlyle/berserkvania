@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>m_displayx = 0;
+            <string>//game settings
+global.scaleRes = 5;
+
+m_displayx = 0;
 m_displayy = 0;
 m_displayScale = 0;
 m_cellWidth = 180;

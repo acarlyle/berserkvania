@@ -57,7 +57,8 @@ m_cellY = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
 
 //draw map
 var color, piece, door, surf;
-m_surf = surface_create(64*27, 64*27);
+m_surf = noone;
+/*m_surf = surface_create(64*27, 64*27);
 surface_set_target(m_surf);
 for(var yy=0; yy&lt;64; yy++){
     for(var xx=0; xx&lt;64; xx++) {
@@ -68,7 +69,7 @@ for(var yy=0; yy&lt;64; yy++){
         piece = (global.map[xx, yy] &amp; 15) + door * m_piecesUsed; //you'd define pieces_used 
         draw_sprite_ext(spr_mapPieces, piece, xx * 27, yy * 27, 1,1, color, 0, 1);
     }
-}
+}*/
 surface_reset_target();
 </string>
           </argument>
@@ -272,8 +273,17 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
     offSet += 20;
 }
 
+//draw map
 if (surface_exists(m_surf)){
-    draw_surface(m_surf, obj_player.x + 10, obj_player.y + 10);
+    //surface_set_target(m_surf);
+    draw_surface(m_surf, (320 * global.scaleRes) - 200, (180 * global.scaleRes) / 10);
+    //surface_reset_target();
+}
+else{
+    m_surf = surface_create(1000, 1000);
+    surface_set_target(m_surf);
+    draw_sprite_ext(spr_mapPieces, 0, 27, 27, 1,1, 0, c_white, 1);
+    surface_reset_target();
 }
 </string>
           </argument>
