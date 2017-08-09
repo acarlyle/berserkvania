@@ -44,6 +44,7 @@ m_z = false;
 m_x = false;
 m_c = false;
 m_shift = false;
+m_mKey = false;
 
 m_hspd = 2;
 m_jumpSpeed = 6;
@@ -180,7 +181,7 @@ m_state = src_moveState;
 //player position
 global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8] |= $80;
 
-
+show_debug_message(global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8])
 </string>
           </argument>
         </arguments>
@@ -272,18 +273,20 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
     }
     offSet += 20;
 }
-
 //draw map
-if (surface_exists(m_surf)){
-    //surface_set_target(m_surf);
-    draw_surface(m_surf, (320 * global.scaleRes) - 200, (180 * global.scaleRes) / 10);
-    //surface_reset_target();
-}
-else{
-    m_surf = surface_create(1000, 1000);
-    surface_set_target(m_surf);
-    draw_sprite_ext(spr_mapPieces, 0, 27, 27, 1,1, 0, c_white, 1);
-    surface_reset_target();
+if (global.drawMap == true){
+    //show_debug_message('draw the fuckin map');
+    if (surface_exists(m_surf)){
+        //surface_set_target(m_surf);
+        draw_surface(m_surf, (320 * global.scaleRes) - 200, (180 * global.scaleRes) / 10);
+        //surface_reset_target();
+    }
+    else{
+        m_surf = surface_create(1000, 1000);
+        surface_set_target(m_surf);
+        draw_sprite_ext(spr_mapPieces, 0, 27, 27, 1,1, 0, c_white, 1);
+        surface_reset_target();
+    }
 }
 </string>
           </argument>

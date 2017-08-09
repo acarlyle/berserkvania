@@ -13,6 +13,10 @@ if (m_shift && m_hspd > 0 && m_canDash && (m_leftArrow || m_rightArrow)){ //dash
     alarm[0] = room_speed / 8; //how long to dash
 }
 
+if (m_mKey){
+    m_state = scr_map;
+}
+
 //if (m_downArrow || m_upArrow){
 //    src_rotateBazooka(); //doesnt do shit
 //}
