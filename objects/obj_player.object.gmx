@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>m_state = src_moveState;
+            <string>m_state = scr_moveState;
 phy_fixed_rotation=true; 
 m_canShoot = true;
 m_canDash = true;
@@ -53,8 +53,13 @@ m_grav = .2;
 m_numDashes = 3;
 
 //player starting cell
-m_cellX = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
-m_cellY = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
+//m_cellX = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
+//m_cellY = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
+m_cellX = 500;
+m_cellY = 500;
+
+show_debug_message('starting cell: ' + string(m_cellX) + ' ' + string(m_cellY));
+
 
 //draw map
 var color, piece, door, surf;
@@ -153,7 +158,7 @@ else{
     m_canDash = true;
 }
 alarm[3] = room_speed;
-m_state = src_moveState;
+m_state = scr_moveState;
 </string>
           </argument>
         </arguments>
@@ -179,9 +184,13 @@ m_state = src_moveState;
             <string>script_execute(m_state);
 
 //player position
-global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8] |= $80;
+//global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8] |= $80;
 
-show_debug_message(global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8])
+//show_debug_message(global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8])
+
+//show_debug_message(string(floor(phy_position_x / 320)))
+show_debug_message(string(floor(phy_position_y / 180)))
+
 </string>
           </argument>
         </arguments>
@@ -372,7 +381,7 @@ size = 128;
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
@@ -382,7 +391,9 @@ size = 128;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>12,20</point>
-    <point>6,16</point>
+    <point>7,12</point>
+    <point>24,12</point>
+    <point>24,25.5</point>
+    <point>7,25.5</point>
   </PhysicsShapePoints>
 </object>

@@ -1,4 +1,4 @@
-///src_rotateBazooka
+///scr_rotateBazooka
 
 if (m_upArrow){
     spr_bazooka.image_angle = 45;

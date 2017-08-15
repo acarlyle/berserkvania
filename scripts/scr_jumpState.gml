@@ -1,6 +1,8 @@
-///src_jumpState
+///scr_jumpState
 
-src_getInput();
+scr_getInput();
+
+show_debug_message('jump jump trampoline')
 
 if (m_leftArrow){
     sprite_index = spr_playerLeft;
@@ -14,7 +16,7 @@ else if (m_rightArrow){
 }
 
 if (m_x && m_canShoot){ //shooting
-    src_fireRocket();
+    scr_fireRocket();
     alarm[1] = room_speed / 2; //cooldown
 }
 
@@ -22,7 +24,7 @@ if (m_airborn){ //exit jumpState
     if (place_meeting(x, y+1, obj_solid)){
         m_vspd = 0;
         m_airborn = false;
-        m_state = src_moveState;
+        m_state = scr_moveState;
     }
 }
 

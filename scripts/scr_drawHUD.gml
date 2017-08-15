@@ -1,4 +1,4 @@
-///src_drawHUD
+///scr_drawHUD
 
 var i;
 var offSet = 20;

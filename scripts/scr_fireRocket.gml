@@ -1,4 +1,4 @@
-///src_fireRocket
+///scr_fireRocket
 
 var bazookaAngle = 0;
 var vspd = 0;
