@@ -76,7 +76,7 @@ allahParticleEmitter = part_emitter_create(allahParticleSys);
           <argument>
             <kind>1</kind>
             <string>m_onFire = false;
-src_akbar();
+scr_akbar();
 instance_destroy();
 </string>
           </argument>
@@ -140,7 +140,7 @@ if (m_onFire){
 }
 
 if (place_meeting(x, y, obj_player)){ //kill that fucker
-    src_akbar();
+    scr_akbar();
     instance_destroy();
 }
 

@@ -54,15 +54,15 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\src_moveState.gml</script>
-    <script>scripts\src_getInput.gml</script>
-    <script>scripts\src_jumpState.gml</script>
-    <script>scripts\src_crouchState.gml</script>
-    <script>scripts\src_dashState.gml</script>
-    <script>scripts\src_fireRocket.gml</script>
-    <script>scripts\src_rotateBazooka.gml</script>
-    <script>scripts\src_akbar.gml</script>
-    <script>scripts\src_drawHUD.gml</script>
+    <script>scripts\scr_moveState.gml</script>
+    <script>scripts\scr_getInput.gml</script>
+    <script>scripts\scr_jumpState.gml</script>
+    <script>scripts\scr_crouchState.gml</script>
+    <script>scripts\scr_dashState.gml</script>
+    <script>scripts\scr_fireRocket.gml</script>
+    <script>scripts\scr_rotateBazooka.gml</script>
+    <script>scripts\scr_akbar.gml</script>
+    <script>scripts\scr_drawHUD.gml</script>
     <scripts name="Settings">
       <script>scripts\scr_applyScreenRes.gml</script>
       <script>scripts\scr_setWindowScale.gml</script>

@@ -7,5 +7,5 @@ if (keyboard_check(ord('M'))){
 
 else {
     //global.drawMap = false;
-    m_state = src_moveState;
+    m_state = scr_moveState;
 }

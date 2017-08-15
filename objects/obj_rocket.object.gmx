@@ -76,7 +76,7 @@ partRocketEmitter = part_emitter_create(partRocketSys);
           <argument>
             <kind>1</kind>
             <string>if (place_meeting(x+1, y, obj_boom) || place_meeting(x, y+1, obj_block_par)){
-    src_akbar();
+    scr_akbar();
     audio_stop_sound(snd_rocketWhistle);
     instance_destroy();
 }

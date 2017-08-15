@@ -3,7 +3,7 @@
 scr_getInput();
 
 //if (m_spaceBar){
-//    m_state = src_jumpState;
+//    m_state = scr_jumpState;
 //}
 if (m_leftArrow){
     phy_position_x -= m_hspd * 3;
