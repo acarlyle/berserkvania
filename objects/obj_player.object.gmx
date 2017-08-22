@@ -191,6 +191,7 @@ m_state = scr_moveState;
 //show_debug_message(string(floor(phy_position_x / 320)))
 show_debug_message(string(floor(phy_position_y / 180)))
 
+
 </string>
           </argument>
         </arguments>

@@ -38,6 +38,8 @@ m_piecesUsed = 0;
 // Map generation
 global.map = ds_grid_create(1000, 1000);
 global.drawMap = true;
+global.mapChunkX = 0;
+global.mapChunkY = 0;
 
 var rmX, rmY;
 for (rmX = 0; rmX &lt; 1000; rmX += 1){

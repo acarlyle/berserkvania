@@ -50,6 +50,19 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprites name="map">
+      <sprite>sprites\spr_mapPiece_UDLR</sprite>
+      <sprite>sprites\spr_mapPiece_URD</sprite>
+      <sprite>sprites\spr_mapPiece_ULR</sprite>
+      <sprite>sprites\spr_mapPiece_RD</sprite>
+      <sprite>sprites\spr_mapPiece_LD</sprite>
+      <sprite>sprites\spr_mapPiece_LR</sprite>
+      <sprite>sprites\spr_mapPiece_UD</sprite>
+      <sprite>sprites\spr_mapPiece_DLR</sprite>
+      <sprite>sprites\spr_mapVConnector</sprite>
+      <sprite>sprites\spr_mapHConnector</sprite>
+      <sprite>sprites\sprite36</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -75,6 +88,7 @@
   <objects name="objects">
     <objects name="Parents">
       <object>objects\obj_solid</object>
+      <object>objects\obj_mapPiece</object>
     </objects>
     <object>objects\obj_player</object>
     <objects name="Environment">
@@ -116,6 +130,18 @@
       <object>objects\obj_boom</object>
       <object>objects\obj_rocket</object>
     </objects>
+    <objects name="map">
+      <object>objects\obj_mapPiece_UDLR</object>
+      <object>objects\obj_mapPiece_URD</object>
+      <object>objects\obj_mapPiece_LD</object>
+      <object>objects\obj_mapPiece_ULR</object>
+      <object>objects\obj_mapPiece_LR</object>
+      <object>objects\obj_mapPiece_UD</object>
+      <object>objects\obj_mapPiece_DLR</object>
+      <object>objects\obj_mapVConnector</object>
+      <object>objects\obj_mapHConnector</object>
+      <object>objects\object40</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\initroom</room>
@@ -124,6 +150,7 @@
     <room>rooms\rm_chainsMain</room>
     <room>rooms\rm_bridge1</room>
     <room>rooms\rm_bossRoom</room>
+    <room>rooms\rm_map</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
