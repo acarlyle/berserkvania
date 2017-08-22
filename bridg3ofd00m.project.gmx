@@ -14,6 +14,7 @@
     <sprites name="Controllers">
       <sprite>sprites\spr_gotoRoom</sprite>
       <sprite>sprites\spr_controller</sprite>
+      <sprite>sprites\spr_pause</sprite>
     </sprites>
     <sprites name="_bridgeleftovers">
       <sprite>sprites\spr_boom</sprite>
@@ -52,6 +53,8 @@
     </sprites>
     <sprites name="map">
       <sprite>sprites\spr_mapPiece_UDLR</sprite>
+      <sprite>sprites\spr_mapPiece_L</sprite>
+      <sprite>sprites\spr_mapPiece_UR</sprite>
       <sprite>sprites\spr_mapPiece_URD</sprite>
       <sprite>sprites\spr_mapPiece_ULR</sprite>
       <sprite>sprites\spr_mapPiece_RD</sprite>
@@ -61,7 +64,6 @@
       <sprite>sprites\spr_mapPiece_DLR</sprite>
       <sprite>sprites\spr_mapVConnector</sprite>
       <sprite>sprites\spr_mapHConnector</sprite>
-      <sprite>sprites\sprite36</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -83,7 +85,6 @@
     <scripts name="Visual">
       <script>scripts\scr_drawGameSurface.gml</script>
     </scripts>
-    <script>scripts\scr_map.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Parents">
@@ -108,6 +109,7 @@
     <objects name="Controllers">
       <object>objects\obj_controller</object>
       <object>objects\obj_gotoRoom</object>
+      <object>objects\obj_pause</object>
     </objects>
     <objects name="Camera">
       <object>objects\obj_camera</object>
@@ -132,6 +134,7 @@
     </objects>
     <objects name="map">
       <object>objects\obj_mapPiece_UDLR</object>
+      <object>objects\obj_mapPiece_L</object>
       <object>objects\obj_mapPiece_URD</object>
       <object>objects\obj_mapPiece_LD</object>
       <object>objects\obj_mapPiece_ULR</object>
@@ -140,7 +143,7 @@
       <object>objects\obj_mapPiece_DLR</object>
       <object>objects\obj_mapVConnector</object>
       <object>objects\obj_mapHConnector</object>
-      <object>objects\object40</object>
+      <object>objects\obj_mapPiece_UR</object>
     </objects>
   </objects>
   <rooms name="rooms">

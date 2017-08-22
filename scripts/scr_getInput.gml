@@ -12,4 +12,4 @@ m_z = keyboard_check(ord('Z'));
 m_x = keyboard_check(ord('X'));
 m_c = keyboard_check(ord('C'));
 m_shift = keyboard_check(vk_shift);
-m_mKey = keyboard_check(ord('M'));
+//m_mKey = keyboard_check(ord('M'));

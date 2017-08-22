@@ -57,6 +57,12 @@
     <instance objName="obj_mapPiece_LD" x="448" y="396" name="inst_A51CA143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mapHConnector" x="480" y="396" name="inst_3D0FE094" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mapPiece_URD" x="464" y="396" name="inst_0323E3B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_UDLR" x="496" y="396" name="inst_4A25B6D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapHConnector" x="512" y="396" name="inst_BFD57E6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_ULR" x="528" y="396" name="inst_8E96F7FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_L" x="528" y="414" name="inst_C601C0A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_URD" x="544" y="414" name="inst_EFDDF5BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_DLR" x="528" y="432" name="inst_A8E8F761" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
