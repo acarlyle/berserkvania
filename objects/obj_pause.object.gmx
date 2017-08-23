@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_pause</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pause = 0;
+            <string>global.pause = 0;
 </string>
           </argument>
         </arguments>
@@ -48,15 +48,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!pause){
+            <string>/*if (!pause){
     pause = 1;
     instance_deactivate_all(true);
+    room_goto(rm_map);
 }
 
 else{
     pause = 0;
     instance_activate_all();
-}
+    room_goto(global.currentRoom);
+}*/
 </string>
           </argument>
         </arguments>

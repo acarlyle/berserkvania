@@ -59,7 +59,21 @@ m_cellX = 500;
 m_cellY = 500;
 
 show_debug_message('starting cell: ' + string(m_cellX) + ' ' + string(m_cellY));
+m_cellX = 500 &lt;&lt; 8 | (100 &amp; 320);
+m_cellY = 500 &lt;&lt; 8 | (100 &amp; 180);
 
+show_debug_message(string(m_cellX));
+show_debug_message(string(m_cellY));
+
+xCellPos = m_cellX &gt;&gt; 8;
+yCellPos = m_cellY &gt;&gt; 8;
+
+show_debug_message('here');
+var bin = scr_strBinToDec(string(111110100))
+show_debug_message(string(bin));
+
+show_debug_message(string(xCellPos));
+show_debug_message(string(yCellPos));
 
 //draw map
 var color, piece, door, surf;
@@ -189,7 +203,7 @@ m_state = scr_moveState;
 //show_debug_message(global.map[m_cellX &gt;&gt; 8, m_cellY &gt;&gt; 8])
 
 //show_debug_message(string(floor(phy_position_x / 320)))
-show_debug_message(string(floor(phy_position_y / 180)))
+//show_debug_message(string(floor(phy_position_y / 180)))
 
 
 </string>

@@ -14,7 +14,7 @@ if (m_shift && m_hspd > 0 && m_canDash && (m_leftArrow || m_rightArrow)){ //dash
 }
 
 if (m_mKey){
-    m_state = scr_map;
+    //m_state = scr_displayMap;
 }
 
 //if (m_downArrow || m_upArrow){

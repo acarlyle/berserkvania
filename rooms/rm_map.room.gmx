@@ -9,7 +9,7 @@
   <speed>60</speed>
   <persistent>0</persistent>
   <colour>12632256</colour>
-  <showcolour>-1</showcolour>
+  <showcolour>0</showcolour>
   <code></code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
@@ -51,18 +51,13 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_mapPiece_ULR" x="448" y="342" name="inst_33902B67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_LR" x="448" y="360" name="inst_B9DCF307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_LR" x="448" y="378" name="inst_4C4716A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_LD" x="448" y="396" name="inst_A51CA143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapHConnector" x="480" y="396" name="inst_3D0FE094" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_URD" x="464" y="396" name="inst_0323E3B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_UDLR" x="496" y="396" name="inst_4A25B6D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapHConnector" x="512" y="396" name="inst_BFD57E6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_ULR" x="528" y="396" name="inst_8E96F7FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_L" x="528" y="414" name="inst_C601C0A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_URD" x="544" y="414" name="inst_EFDDF5BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mapPiece_DLR" x="528" y="432" name="inst_A8E8F761" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_LR" x="288" y="198" name="inst_B9DCF307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_LR" x="288" y="216" name="inst_4C4716A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_BL" x="288" y="234" name="inst_A51CA143" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_BR" x="304" y="234" name="inst_0323E3B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_Open" x="336" y="234" name="inst_4A25B6D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_L" x="368" y="252" name="inst_C601C0A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mapPiece_BR" x="384" y="252" name="inst_EFDDF5BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -52,18 +52,17 @@
       </sprites>
     </sprites>
     <sprites name="map">
-      <sprite>sprites\spr_mapPiece_UDLR</sprite>
+      <sprite>sprites\spr_mapPiece_Open</sprite>
+      <sprite>sprites\spr_mapPiece_TL</sprite>
+      <sprite>sprites\spr_mapPiece_T</sprite>
+      <sprite>sprites\spr_mapPiece_R</sprite>
       <sprite>sprites\spr_mapPiece_L</sprite>
-      <sprite>sprites\spr_mapPiece_UR</sprite>
-      <sprite>sprites\spr_mapPiece_URD</sprite>
-      <sprite>sprites\spr_mapPiece_ULR</sprite>
-      <sprite>sprites\spr_mapPiece_RD</sprite>
-      <sprite>sprites\spr_mapPiece_LD</sprite>
+      <sprite>sprites\spr_mapPiece_TR</sprite>
+      <sprite>sprites\spr_mapPiece_BR</sprite>
+      <sprite>sprites\spr_mapPiece_BL</sprite>
       <sprite>sprites\spr_mapPiece_LR</sprite>
-      <sprite>sprites\spr_mapPiece_UD</sprite>
-      <sprite>sprites\spr_mapPiece_DLR</sprite>
-      <sprite>sprites\spr_mapVConnector</sprite>
-      <sprite>sprites\spr_mapHConnector</sprite>
+      <sprite>sprites\spr_mapPiece_TB</sprite>
+      <sprite>sprites\spr_mapPiece_B</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -85,6 +84,8 @@
     <scripts name="Visual">
       <script>scripts\scr_drawGameSurface.gml</script>
     </scripts>
+    <script>scripts\scr_displayMap.gml</script>
+    <script>scripts\scr_strBinToDec.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Parents">
@@ -133,17 +134,17 @@
       <object>objects\obj_rocket</object>
     </objects>
     <objects name="map">
-      <object>objects\obj_mapPiece_UDLR</object>
+      <object>objects\obj_mapPiece_Open</object>
+      <object>objects\obj_mapPiece_TR</object>
+      <object>objects\obj_mapPiece_TL</object>
       <object>objects\obj_mapPiece_L</object>
-      <object>objects\obj_mapPiece_URD</object>
-      <object>objects\obj_mapPiece_LD</object>
-      <object>objects\obj_mapPiece_ULR</object>
+      <object>objects\obj_mapPiece_B</object>
+      <object>objects\obj_mapPiece_T</object>
+      <object>objects\obj_mapPiece_R</object>
+      <object>objects\obj_mapPiece_BR</object>
+      <object>objects\obj_mapPiece_BL</object>
       <object>objects\obj_mapPiece_LR</object>
-      <object>objects\obj_mapPiece_UD</object>
-      <object>objects\obj_mapPiece_DLR</object>
-      <object>objects\obj_mapVConnector</object>
-      <object>objects\obj_mapHConnector</object>
-      <object>objects\obj_mapPiece_UR</object>
+      <object>objects\obj_mapPiece_TB</object>
     </objects>
   </objects>
   <rooms name="rooms">
