@@ -84,8 +84,13 @@
     <scripts name="Visual">
       <script>scripts\scr_drawGameSurface.gml</script>
     </scripts>
-    <script>scripts\scr_displayMap.gml</script>
-    <script>scripts\scr_strBinToDec.gml</script>
+    <scripts name="Map">
+      <script>scripts\scr_displayMap.gml</script>
+      <script>scripts\scr_setupMap.gml</script>
+    </scripts>
+    <scripts name="Math">
+      <script>scripts\scr_strBinToDec.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Parents">

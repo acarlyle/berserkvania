@@ -75,6 +75,15 @@ show_debug_message(string(bin));
 show_debug_message(string(xCellPos));
 show_debug_message(string(yCellPos));
 
+//map[cell_x&gt;&gt;8,cell_y&gt;&gt;8] |= $80;
+
+show_debug_message('next: ');
+
+ha = scr_strBinToDec(string(01000111));
+show_debug_message(string(ha));
+ha |= $80;
+show_debug_message(string(ha));
+
 //draw map
 var color, piece, door, surf;
 m_surf = noone;

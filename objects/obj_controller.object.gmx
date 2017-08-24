@@ -42,17 +42,9 @@ global.mapChunkX = 0;
 global.mapChunkY = 0;
 global.currentRoom = rm_pits;
 
+scr_setupMap();
 
-
-
-var rmX, rmY;
-for (rmX = 0; rmX &lt; 1000; rmX += 1){
-   for (rmY = 0; rmY &lt; 1000; rmY += 1){
-      global.map[rmX, rmY] = 0;
-   }
-}
-
-show_debug_message(global.map[500,500]);
+//show_debug_message(global.map[500,502]);
 
 scr_applyScreenRes();
 room_goto(rm_pits);

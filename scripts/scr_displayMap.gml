@@ -11,5 +11,5 @@ if (!global.pause){
 else{
     global.pause = 0;
     instance_activate_all();
-    room_goto(global.currentRoom);
+    //room_goto(global.currentRoom);
 }
