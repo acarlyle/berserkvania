@@ -62,31 +62,31 @@ show_debug_message('starting cell: ' + string(m_cellX) + ' ' + string(m_cellY));
 m_cellX = 500 &lt;&lt; 8 | (100 &amp; 320);
 m_cellY = 500 &lt;&lt; 8 | (100 &amp; 180);
 
-show_debug_message(string(m_cellX));
-show_debug_message(string(m_cellY));
+//show_debug_message(string(m_cellX));
+//show_debug_message(string(m_cellY));
 
 xCellPos = m_cellX &gt;&gt; 8;
 yCellPos = m_cellY &gt;&gt; 8;
 
-show_debug_message('here');
+//show_debug_message('here');
 var bin = scr_strBinToDec(string(111110100))
-show_debug_message(string(bin));
+//show_debug_message(string(bin));
 
-show_debug_message(string(xCellPos));
-show_debug_message(string(yCellPos));
+//show_debug_message(string(xCellPos));
+//show_debug_message(string(yCellPos));
 
 //map[cell_x&gt;&gt;8,cell_y&gt;&gt;8] |= $80;
 
-show_debug_message('next: ');
+//show_debug_message('next: ');
 
 ha = scr_strBinToDec(string(01000111));
-show_debug_message(string(ha));
+//show_debug_message(string(ha));
 ha |= $80;
-show_debug_message(string(ha));
+//show_debug_message(string(ha));
 
 //draw map
-var color, piece, door, surf;
-m_surf = noone;
+//var color, piece, door, surf;
+//m_surf = noone;
 /*m_surf = surface_create(64*27, 64*27);
 surface_set_target(m_surf);
 for(var yy=0; yy&lt;64; yy++){
@@ -307,7 +307,7 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
     offSet += 20;
 }
 //draw map
-if (global.drawMap == true){
+/*if (global.drawMap == true){
     //show_debug_message('draw the fuckin map');
     if (surface_exists(m_surf)){
         //surface_set_target(m_surf);
@@ -320,7 +320,9 @@ if (global.drawMap == true){
         draw_sprite_ext(spr_mapPieces, 0, 27, 27, 1,1, 0, c_white, 1);
         surface_reset_target();
     }
-}
+}*/
+
+
 </string>
           </argument>
         </arguments>
@@ -388,7 +390,10 @@ else if (sprite_index == spr_playerCrouched || sprite_index == spr_playerCrouche
     draw_sprite_ext(spr_greatSword, image_index, x, y+3, .05, .05, bazookaAngle, c_white, 1);  
 
 }
+
 draw_self();
+
+
 
 //lighting around player
 size = 128;

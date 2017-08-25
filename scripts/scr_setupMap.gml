@@ -11,7 +11,7 @@ for (rmX = 0; rmX < 1000; rmX += 1){
 }
 
 global.map[500, 499] = scr_strBinToDec(string(01001001));
-global.map[500, 500] = scr_strBinToDec(string(01001001)); //start cell
+global.map[500, 500] = scr_strBinToDec(string(11001001)); //start cell
 global.map[500, 501] = scr_strBinToDec(string(01001001));
 global.map[500, 502] = scr_strBinToDec(string(01000111));
 
@@ -48,16 +48,22 @@ global.map[500, 502] = scr_strBinToDec(string(01000111));
 
 //create the surface of the minimap
 var color, piece, door, surf;
-surf = surface_create(16*16, 16*18); // (numWidth*tileWidth, numHeight*tileHeight)
-surface_set_target(surf);
-for(var yy=0; yy<16; yy++) {
-    for(var xx=0; xx<16; xx++) {
+var piecesUsed = 10;
+//surf = surface_create(16*16, 16*18); // (numWidth*tileWidth, numHeight*tileHeight)
+global.mapSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
+surface_set_target(global.mapSurf);
+for(var yy=500; yy<510; yy++) {
+    for(var xx=500; xx<510; xx++) {
         if global.map[xx,yy] & $C0 == 0 continue; //don't draw unknown rooms
-        if map[xx,yy] & $80 color = $D08080
+        if global.map[xx,yy] & $80 color = $D08080
         else color = $808080; //set the color if room is known
-        door = map[xx,yy] >> 4 & 3;
-        piece = (map[xx,yy] & 15) + door * pieces_used; //you'd define pieces_used 
-        draw_sprite_ext(spr_map_pieces, piece, xx * 27, yy * 27, 1,1, color, 0, 1);
+        door = global.map[xx,yy] >> 4 & 3;
+        piece = (global.map[xx,yy] & 15) + door * piecesUsed; //you'd define pieces_used 
+        draw_sprite_ext(spr_mapPieces, piece, xx * 16, yy * 18, 1,1, color, 0, 1);
+        
+        //show_debug_message(string(color)); //RIGHT
+        //show_debug_message(string(piece));
     }
 }
+
 surface_reset_target();
