@@ -36,7 +36,7 @@ m_cellHeight = 320;
 m_piecesUsed = 0;
 
 // Map generation
-global.map = ds_grid_create(1000, 1000);
+global.map = ds_grid_create(100, 100);
 global.drawMap = true;
 global.mapChunkX = 0;
 global.mapChunkY = 0;
@@ -50,16 +50,24 @@ global.currentRoom = rm_pits;
 
 // set default map to 0
 var rmX, rmY;
-for (rmX = 0; rmX &lt; 1000; rmX += 1){
-   for (rmY = 0; rmY &lt; 1000; rmY += 1){
+for (rmX = 0; rmX &lt; 100; rmX += 1){
+   for (rmY = 0; rmY &lt; 100; rmY += 1){
       global.map[rmX, rmY] = 0;
    }
 }
+//spire of chains
+//global.map[50, 48] = scr_strBinToDec(string(01001001));
+global.map[50, 49] = scr_strBinToDec(string(01001001));
+global.map[50, 50] = scr_strBinToDec(string(11001001)); //start cell
+global.map[50, 51] = scr_strBinToDec(string(01001001));
+global.map[50, 52] = scr_strBinToDec(string(01000111));
+global.map[51, 52] = scr_strBinToDec(string(01001011));
 
-global.map[500, 499] = scr_strBinToDec(string(01001001));
-global.map[500, 500] = scr_strBinToDec(string(11001001)); //start cell
-global.map[500, 501] = scr_strBinToDec(string(01001001));
-global.map[500, 502] = scr_strBinToDec(string(01000111));
+global.map[52, 52] = scr_strBinToDec(string(01001010));
+
+global.map[53, 52] = scr_strBinToDec(string(01000110));
+global.map[53, 53] = scr_strBinToDec(string(01001001));
+global.map[53, 54] = scr_strBinToDec(string(01001011));
 
 /* binary room value mapping
 
@@ -80,7 +88,7 @@ global.map[500, 502] = scr_strBinToDec(string(01000111));
         1000 - obj_mapPiece_BR
         1001 - obj_mapPiece_LR
         1010 - obj_mapPiece_TB
-        1011 -
+        1011 - obj_mapPiece_TRB_Door
         
     * 3    - is it a door ?
     * 2    - type of room - save, teleport
