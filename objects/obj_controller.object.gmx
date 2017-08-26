@@ -91,7 +91,7 @@ global.map[500, 502] = scr_strBinToDec(string(01000111));
     room contain a secret ? Maybe more . . .
     
 */
-
+/*
 //create the surface of the minimap
 var color, piece, door, surf;
 var piecesUsed = 10;
@@ -111,12 +111,7 @@ for(var yy=500; yy&lt;510; yy++) {
         //show_debug_message(string(piece));
     }
 }
-
-//surf = surface_create(320*global.scaleRes, 180*global.scaleRes);
-//surface_set_target(surf);
-//draw_sprite(sprBald, 0, 0, 0);
-//surface_reset_target();
-
+*/
 
 //show_debug_message(global.map[500,502]);
 
@@ -215,8 +210,7 @@ if (surface_exists(application_surface)) scr_drawGameSurface(m_displayx, m_displ
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_surface(mapSurf, 0, 0);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

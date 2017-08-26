@@ -99,6 +99,32 @@ for(var yy=0; yy&lt;64; yy++){
         draw_sprite_ext(spr_mapPieces, piece, xx * 27, yy * 27, 1,1, color, 0, 1);
     }
 }*/
+/*
+//create the surface of the minimap
+var color, piece, door, surf;
+var piecesUsed = 10;
+//surf = surface_create(16*16, 16*18); // (numWidth*tileWidth, numHeight*tileHeight)
+mapSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
+surface_set_target(mapSurf);
+for(var yy=500; yy&lt;510; yy++) {
+    for(var xx=500; xx&lt;510; xx++) {
+        if global.map[xx,yy] &amp; $C0 == 0 continue; //don't draw unknown rooms
+        if global.map[xx,yy] &amp; $80 color = $D08080
+        else color = $808080; //set the color if room is known
+        door = global.map[xx,yy] &gt;&gt; 4 &amp; 3;
+        piece = (global.map[xx,yy] &amp; 15) + door * piecesUsed; //you'd define pieces_used 
+        draw_sprite_ext(spr_mapPieces, piece, xx * 16, yy * 18, 1,1, color, 0, 1);
+        
+        show_debug_message(string(color)); //RIGHT
+        //show_debug_message(string(piece));
+    }
+}
+*/
+surf = surface_create(320*global.scaleRes, 180*global.scaleRes);
+surface_set_target(surf);
+draw_sprite(spr_pause, 0, 0, 0);
+surface_reset_target();
+
 surface_reset_target();
 </string>
           </argument>
@@ -390,6 +416,8 @@ else if (sprite_index == spr_playerCrouched || sprite_index == spr_playerCrouche
     draw_sprite_ext(spr_greatSword, image_index, x, y+3, .05, .05, bazookaAngle, c_white, 1);  
 
 }
+
+draw_surface(surf, 112, 256);
 
 draw_self();
 
