@@ -93,6 +93,9 @@
     <scripts name="Math">
       <script>scripts\scr_strBinToDec.gml</script>
     </scripts>
+    <scripts name="Helper Functions">
+      <script>scripts\print.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Parents">

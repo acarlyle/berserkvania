@@ -63,6 +63,9 @@ global.newCellX = 0; //shitty way to check if we're in a different cell
 global.newCellY = 1;
 global.moving = false;
 
+global.miniX = 50;
+global.miniY = 50;
+
 show_debug_message('starting cell: ' + string(global.mapCellX) + ' ' + string(global.mapCellY));
 global.mapCellX = 50 &lt;&lt; 8 | (100 &amp; 320);
 global.mapCellY = 50 &lt;&lt; 8 | (100 &amp; 180);
