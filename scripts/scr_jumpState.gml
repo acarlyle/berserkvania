@@ -2,7 +2,7 @@
 
 scr_getInput();
 
-show_debug_message('jump jump trampoline')
+//show_debug_message('jump jump trampoline')
 
 if (m_leftArrow){
     sprite_index = spr_playerLeft;

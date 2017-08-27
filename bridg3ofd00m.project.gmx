@@ -88,6 +88,7 @@
     <scripts name="Map">
       <script>scripts\scr_displayMap.gml</script>
       <script>scripts\scr_setupMap.gml</script>
+      <script>scripts\scr_updateMap.gml</script>
     </scripts>
     <scripts name="Math">
       <script>scripts\scr_strBinToDec.gml</script>

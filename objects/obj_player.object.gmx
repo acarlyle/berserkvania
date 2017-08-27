@@ -55,18 +55,23 @@ m_numDashes = 3;
 //player starting cell
 //m_cellX = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
 //m_cellY = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
-m_cellX = 50;
-m_cellY = 50;
+global.mapCellX = 50; //pos in map array
+global.mapCellY = 50;
+global.curCellX = 0; //for updating the map while transversing room
+global.curCellY = 1;
+global.newCellX = 0; //shitty way to check if we're in a different cell
+global.newCellY = 1;
+global.moving = false;
 
-show_debug_message('starting cell: ' + string(m_cellX) + ' ' + string(m_cellY));
-m_cellX = 50 &lt;&lt; 8 | (100 &amp; 320);
-m_cellY = 50 &lt;&lt; 8 | (100 &amp; 180);
+show_debug_message('starting cell: ' + string(global.mapCellX) + ' ' + string(global.mapCellY));
+global.mapCellX = 50 &lt;&lt; 8 | (100 &amp; 320);
+global.mapCellY = 50 &lt;&lt; 8 | (100 &amp; 180);
 
 //show_debug_message(string(m_cellX));
 //show_debug_message(string(m_cellY));
 
-xCellPos = m_cellX &gt;&gt; 8;
-yCellPos = m_cellY &gt;&gt; 8;
+xCellPos = global.mapCellX &gt;&gt; 8;
+yCellPos = global.mapCellY &gt;&gt; 8;
 
 //show_debug_message('here');
 var bin = scr_strBinToDec(string(111110100));
@@ -129,8 +134,8 @@ for(var yy=0; yy&lt;50; yy++) {
 var color, piece, door;
 var piecesUsed = 11;
 //surf = surface_create(16*16, 16*18); // (numWidth*tileWidth, numHeight*tileHeight)
-mapSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
-surface_set_target(mapSurf);
+global.mapSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
+surface_set_target(global.mapSurf);
 
 var xCell = xCellPos - 2;
 var yCell = yCellPos - 1;
@@ -141,8 +146,8 @@ for (var xx = 0; xx &lt; 5; xx++){
             draw_sprite_ext(spr_blankTile, 0, xx * 16, yy * 18, 1, 1, 0, c_white, 1);
             continue;
         }
-        if global.map[xCell+xx, yCell+yy] &amp; $80 color = $CD0000
-        else color = $3336e5; //set the color if room is known
+        if global.map[xCell+xx, yCell+yy] &amp; $80 color = $ff0000;
+        else color = $8421504; //set the color if room is known
         door = global.map[xCell+xx, yCell+yy] &gt;&gt; 4 &amp; 3;
         piece = (global.map[xCell+xx, yCell+yy] &amp; 15) + door * piecesUsed; //you'd define pieces_used 
         draw_sprite_ext(spr_mapPieces, piece, xx * 16, yy * 18, 1, 1, 0, color, 1);
@@ -272,7 +277,7 @@ m_state = scr_moveState;
 //show_debug_message(string(floor(phy_position_x / 320)))
 //show_debug_message(string(floor(phy_position_y / 180)))
 
-
+scr_updateMap();
 </string>
           </argument>
         </arguments>
@@ -380,8 +385,8 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
     }
 }*/
 
-draw_surface(mapSurf, 320*global.scaleRes - 100, 20);
-
+draw_surface(global.mapSurf, 320*global.scaleRes - 100, 20);
+//surface_reset_target();
 
 
 //draw_surface(mapSurf, 0, 0);

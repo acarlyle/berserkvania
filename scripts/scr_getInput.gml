@@ -13,3 +13,5 @@ m_x = keyboard_check(ord('X'));
 m_c = keyboard_check(ord('C'));
 m_shift = keyboard_check(vk_shift);
 m_mKey = keyboard_check(ord('M'));
+
+if (vk_anykey) global.moving = true;

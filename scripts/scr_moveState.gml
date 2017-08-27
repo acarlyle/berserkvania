@@ -1,5 +1,45 @@
 ///scr_moveState
-
+/*
+//check/update map due to movement
+if (global.moving){
+    var updateMap = false;
+    global.curCellX = floor(phy_position_x/320);
+    global.curCellY = floor(phy_position_y/320);
+    
+    if (global.curCellX != global.newCellX){
+        if (global.newCellX < global.curCellX){
+            global.curCellX--;
+            global.mapCellX--;
+        }
+        else{
+            global.curCellX++;   
+            global.mapCellX++;
+        }
+        updateMap = true;
+        show_debug_message('1!');
+    }
+    if (global.curCellY != global.newCellY){
+        if (global.newCellY < global.curCellY){
+            global.curCellY++;
+            global.mapCellY++;
+        }
+        if (global.newCellY > global.curCellY){
+            global.curCellY--;   
+            global.mapCellY--;
+        }
+        updateMap = true;
+        show_debug_message('2!');
+    }
+    if (updateMap){
+        updateMap = false;
+        global.map[global.mapCellX>>8,global.mapCellY>>8] |= $80;
+        scr_updateMap();
+    }
+    //show_debug_message(global.map[global.mapCellX>>8,global.mapCellY>>8])
+    //show_debug_message(global.curCellY);
+}
+global.moving = false;
+*/
 //Player movement
 scr_getInput();
 
@@ -27,6 +67,7 @@ if (m_spaceBar){
 else if (m_ctrl){
     m_state = scr_crouchState;
 }
+
 if (m_leftArrow){
     phy_position_x -= m_hspd;
     //m_cellX -= m_hspd;
