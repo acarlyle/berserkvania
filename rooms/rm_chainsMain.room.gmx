@@ -14,7 +14,17 @@
 //window_set_fullscreen(full);
 
 //global.MonitorW=display_get_width();
-//global.MonitorH=display_get_height();</code>
+//global.MonitorH=display_get_height();
+print('ENTERED CHAINS MAIN');
+
+if (object_get_sprite(obj_player) == spr_player){ //facing right
+    print('yaa');
+    global.miniX = 53;
+    global.miniY = 52;
+    global.newCellX = 0;
+    global.newCellY = 0;
+    global.updateMap = true;
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>0</clearDisplayBuffer>

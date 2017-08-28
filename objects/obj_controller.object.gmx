@@ -150,7 +150,7 @@ room_goto(rm_pits);
           <argument>
             <kind>1</kind>
             <string>if (instance_number(obj_player) == 0) {
-    player = instance_create(160, 304, obj_player);
+    player = instance_create(135, 310, obj_player);
     //camera = instance_create(player.x, player.y-12, obj_camera);
     with (player) {
         //juststarted = 100;

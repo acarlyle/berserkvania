@@ -2,12 +2,13 @@
 
 //check/update map due to movement
 
-var updateMap = false;
 global.curCellX = floor(phy_position_x/320);
 global.curCellY = floor(phy_position_y/180);
     
 //print(global.curCellX);
 //print(global.newCellX);
+
+
 
 if (global.curCellX != global.newCellX){
     if (global.newCellX < global.curCellX){
@@ -20,7 +21,7 @@ if (global.curCellX != global.newCellX){
         global.miniX--;   
         //global.mapCellX++;
     }
-    updateMap = true;
+    global.updateMap = true;
     show_debug_message('1!');
 }
 //show_debug_message('newGuy');
@@ -38,22 +39,22 @@ if (global.curCellY != global.newCellY){
         global.miniY--;
         //global.mapCellY--;
     }
-    updateMap = true;
+    global.updateMap = true;
     show_debug_message('2!');
 }
-if (updateMap){
+if (global.updateMap){
     show_debug_message('UPDATING MAP!');
     global.map[global.miniX,global.miniY] |= $80;
         
-    //show_debug_message(global.map[global.mapCellX>>8,global.mapCellY>>8]);
-    //show_debug_message(global.mapCellY);
+    print(global.miniX);
+    print(global.miniY);
     
 }
     //show_debug_message(global.map[global.mapCellX>>8,global.mapCellY>>8])
     //show_debug_message(global.curCellY);
     
-if (updateMap){
-    updateMap = false;
+if (global.updateMap){
+    global.updateMap = false;
     //reset mapSurf
     if (surface_exists(global.mapSurf)){
         surface_set_target(global.mapSurf);
@@ -105,5 +106,8 @@ if (updateMap){
         
         }
     }
+    //for blinking rectangle of where you are
+    //draw_set_color(c_white);
+    //draw_rectangle(xCellPos - 16, yCellPos - 32, xCellPos-6, yCellPos - 16, false); 
 }
 surface_reset_target();

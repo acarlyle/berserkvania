@@ -33,6 +33,9 @@ m_airborn = false;
 m_facingLeft = false;
 m_facingRight = true;
 
+//unlocked abilities
+m_hasSword = false;
+
 //Controls
 m_leftArrow = false;
 m_upArrow = false;
@@ -61,7 +64,7 @@ global.curCellX = 0; //for updating the map while transversing room
 global.curCellY = 1;
 global.newCellX = 0; //shitty way to check if we're in a different cell
 global.newCellY = 1;
-global.moving = false;
+global.updateMap = false;
 
 global.miniX = 50;
 global.miniY = 50;
@@ -156,6 +159,10 @@ for (var xx = 0; xx &lt; 5; xx++){
         draw_sprite_ext(spr_mapPieces, piece, xx * 16, yy * 18, 1, 1, 0, color, 1);
     }
 } 
+
+//for blinking rectangle of where you are
+//draw_set_color(c_white);
+//draw_rectangle(xCellPos - 16, yCellPos - 32, xCellPos-6, yCellPos - 16, false); 
 
 
 
@@ -316,6 +323,31 @@ else if (obj_player.x &lt; obj_boom.x){
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_abilityPickup">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with (obj_sword){
+    m_hasSword = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_solid">
       <action>
         <libid>1</libid>
@@ -449,16 +481,18 @@ if (m_c){
     m_c = false;
 }
 
-if (sprite_index == spr_player || sprite_index == spr_playerLeft){ //player standing
-    //draw_sprite_ext(bazookaSpr, image_index, x, y, 1, 1, bazookaAngle, c_white, 1); 
-    draw_sprite_ext(spr_greatSword, image_index, x, y, .05, .05, bazookaAngle, c_white, 1);
-
-}
-else if (sprite_index == spr_playerCrouched || sprite_index == spr_playerCrouchedLeft){ //player crouched
-    //draw_sprite(spr_bazooka, image_index, x, y+3);
-    //draw_sprite_ext(bazookaSpr, image_index, x, y+3, 1, 1, bazookaAngle, c_white, 1);
-    draw_sprite_ext(spr_greatSword, image_index, x, y+3, .05, .05, bazookaAngle, c_white, 1);  
-
+if (m_hasSword){
+    if (sprite_index == spr_player || sprite_index == spr_playerLeft){ //player standing
+        //draw_sprite_ext(bazookaSpr, image_index, x, y, 1, 1, bazookaAngle, c_white, 1); 
+        draw_sprite_ext(spr_greatSword, image_index, x, y, .05, .05, bazookaAngle, c_white, 1);
+    
+    }
+    else if (sprite_index == spr_playerCrouched || sprite_index == spr_playerCrouchedLeft){ //player crouched
+        //draw_sprite(spr_bazooka, image_index, x, y+3);
+        //draw_sprite_ext(bazookaSpr, image_index, x, y+3, 1, 1, bazookaAngle, c_white, 1);
+        draw_sprite_ext(spr_greatSword, image_index, x, y+3, .05, .05, bazookaAngle, c_white, 1);  
+    
+    }
 }
 
 //draw_surface(surf, 112, 256);

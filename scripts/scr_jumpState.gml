@@ -7,12 +7,10 @@ scr_getInput();
 if (m_leftArrow){
     sprite_index = spr_playerLeft;
     phy_position_x -= m_hspd;
-    m_cellX -= m_hspd;
 }
 else if (m_rightArrow){
     sprite_index = spr_player;
     phy_position_x += m_hspd;
-    m_cellX += m_hspd;
 }
 
 if (m_x && m_canShoot){ //shooting
@@ -38,4 +36,3 @@ if (place_meeting(x, y+1, obj_solid)){ //we're on the floor
 }
 
 phy_position_y += m_vspd;
-m_cellY += m_vspd;

@@ -101,6 +101,7 @@
     <objects name="Parents">
       <object>objects\obj_solid</object>
       <object>objects\obj_mapPiece</object>
+      <object>objects\obj_abilityPickup</object>
     </objects>
     <object>objects\obj_player</object>
     <objects name="Environment">
@@ -155,6 +156,9 @@
       <object>objects\obj_mapPiece_BL</object>
       <object>objects\obj_mapPiece_LR</object>
       <object>objects\obj_mapPiece_TB</object>
+    </objects>
+    <objects name="abilityPickups">
+      <object>objects\obj_sword</object>
     </objects>
   </objects>
   <rooms name="rooms">
