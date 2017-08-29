@@ -68,6 +68,8 @@ global.map[52, 52] = scr_strBinToDec(string(01001010));
 global.map[53, 52] = scr_strBinToDec(string(01000110));
 global.map[53, 53] = scr_strBinToDec(string(01001001));
 global.map[53, 54] = scr_strBinToDec(string(01001011));
+global.map[53, 55] = scr_strBinToDec(string(01001001));
+global.map[53, 54] = scr_strBinToDec(string(01001011));
 
 /* binary room value mapping
 

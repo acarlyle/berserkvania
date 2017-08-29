@@ -340,8 +340,10 @@ else if (obj_player.x &lt; obj_boom.x){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (obj_sword){
+            <string>if (instance_exists(obj_sword)){
     m_hasSword = true;
+    instance_destroy(obj_sword);
+    instance_destroy(obj_abilityPickup);
 }
 </string>
           </argument>
