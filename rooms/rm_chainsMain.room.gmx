@@ -121,7 +121,7 @@ if (object_get_sprite(obj_player) == spr_player){ //facing right
     <instance objName="obj_solid1x1" x="304" y="688" name="inst_ECAF3166" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1" x="304" y="608" name="inst_0A718A42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gotoRoom" x="512" y="288" name="inst_61D0420F" locked="0" code="target_x = 208;&#xA;target_y = 64;&#xA;&#xA;target_r = rm_energyCannon;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="320" y="704" name="inst_55F12A9C" locked="0" code="target_x = 800;&#xA;target_y = 0;&#xA;&#xA;target_r = rm_executioner;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gotoRoom" x="320" y="704" name="inst_55F12A9C" locked="0" code="target_x = 800;&#xA;target_y = 32;&#xA;&#xA;target_r = rm_executioner;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid8x1" x="320" y="352" name="inst_03C5ABCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid8x1" x="320" y="272" name="inst_9A956003" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid8x1" x="448" y="272" name="inst_23F1B18A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -168,11 +168,13 @@
     <room>rooms\initroom</room>
     <room>rooms\rm_pits</room>
     <room>rooms\rm_energyCannon</room>
-    <room>rooms\rm_executioner</room>
     <room>rooms\rm_chainsMain</room>
     <room>rooms\rm_bridge1</room>
     <room>rooms\rm_bossRoom</room>
     <room>rooms\rm_map</room>
+    <rooms name="bosses">
+      <room>rooms\rm_executioner</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

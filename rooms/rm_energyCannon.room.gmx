@@ -75,8 +75,8 @@ if (object_get_sprite(obj_player) == spr_player){ //facing right
     <instance objName="obj_solid4x1" x="192" y="160" name="inst_05108D9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1" x="208" y="144" name="inst_CC979D1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1" x="224" y="144" name="inst_5BAF5240" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="256" y="32" name="inst_22D855F3" locked="0" code="target_x = 80;&#xA;target_y = 64;&#xA;&#xA;target_r = rm_chainsMain;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="0" y="32" name="inst_DC9F1846" locked="0" code="target_x = 512;&#xA;target_y = 592;&#xA;&#xA;target_r = rm_pits;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gotoRoom" x="256" y="32" name="inst_22D855F3" locked="0" code="target_x = 80;&#xA;target_y = 64;&#xA;&#xA;target_r = rm_chainsMain;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gotoRoom" x="0" y="32" name="inst_DC9F1846" locked="0" code="target_x = 512;&#xA;target_y = 592;&#xA;&#xA;target_r = rm_pits;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

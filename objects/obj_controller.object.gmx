@@ -71,6 +71,23 @@ global.map[53, 54] = scr_strBinToDec(string(01001011));
 global.map[53, 55] = scr_strBinToDec(string(01001001));
 global.map[53, 54] = scr_strBinToDec(string(01001011));
 
+//executioner
+global.map[48, 55] = scr_strBinToDec(string(01000000));
+global.map[49, 55] = scr_strBinToDec(string(01000000));
+global.map[50, 55] = scr_strBinToDec(string(01000000));
+global.map[51, 55] = scr_strBinToDec(string(01000000));
+global.map[52, 55] = scr_strBinToDec(string(01000000));
+global.map[48, 56] = scr_strBinToDec(string(01000000));
+global.map[49, 56] = scr_strBinToDec(string(01000000));
+global.map[50, 56] = scr_strBinToDec(string(01000000));
+global.map[51, 56] = scr_strBinToDec(string(01000000));
+global.map[52, 56] = scr_strBinToDec(string(01000000));
+global.map[48, 57] = scr_strBinToDec(string(01000100));
+global.map[49, 57] = scr_strBinToDec(string(01000100));
+global.map[50, 57] = scr_strBinToDec(string(01000100));
+global.map[51, 57] = scr_strBinToDec(string(01000100));
+global.map[52, 57] = scr_strBinToDec(string(01000100));
+
 /* binary room value mapping
 
     0123 4567
