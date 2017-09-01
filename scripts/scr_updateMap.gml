@@ -2,8 +2,10 @@
 
 //check/update map due to movement
 
-global.curCellX = floor(phy_position_x/320);
-global.curCellY = floor(phy_position_y/180);
+//global.curCellX = floor(phy_position_x/320);
+//global.curCellY = floor(phy_position_y/180);
+global.curCellX = floor(x/320);
+global.curCellY = floor(y/180);
     
 //print(global.curCellX);
 //print(global.newCellX);

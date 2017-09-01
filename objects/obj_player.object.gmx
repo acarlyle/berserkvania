@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>m_state = scr_moveState;
-phy_fixed_rotation=true; 
+//phy_fixed_rotation=true; 
 m_canShoot = true;
 m_canDash = true;
 m_airborn = false;
@@ -49,7 +49,8 @@ m_c = false;
 m_shift = false;
 m_mKey = false;
 
-m_hspd = 2;
+m_moveSpeed = 2;
+m_hspd = 0;
 m_jumpSpeed = 6;
 m_vspd = 0;
 m_grav = .2;
@@ -286,6 +287,7 @@ m_state = scr_moveState;
 
 //show_debug_message(string(floor(phy_position_x / 320)))
 //show_debug_message(string(floor(phy_position_y / 180)))
+
 
 scr_updateMap();
 </string>
@@ -537,7 +539,7 @@ size = 128;
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -548,10 +550,5 @@ size = 128;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints>
-    <point>7,12</point>
-    <point>24,12</point>
-    <point>24,25.5</point>
-    <point>7,25.5</point>
-  </PhysicsShapePoints>
+  <PhysicsShapePoints/>
 </object>
