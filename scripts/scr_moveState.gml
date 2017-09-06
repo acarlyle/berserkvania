@@ -42,18 +42,19 @@ global.moving = false;
 */
 //Player movement
 scr_getInput();
+
 var move = -m_leftArrow + m_rightArrow;
 m_hspd = move * m_moveSpeed;
-
+    
 //if (m_leftArrow){
 //    print('nig');
 //}
-
-if (m_vspd < 10) m_vspd += m_grav;
+    
+if (m_vspd < 5) m_vspd += m_grav;
 if (place_meeting(x, y+1, obj_solid)){
     m_vspd = m_spaceBar * -m_jumpSpeed; 
 }
-
+    
 //Horz. collision
 if (place_meeting(x+m_hspd, y, obj_solid)){
     while(!place_meeting(x+sign(m_hspd), y, obj_solid)){
@@ -61,8 +62,8 @@ if (place_meeting(x+m_hspd, y, obj_solid)){
     }
     m_hspd = 0;
 } 
-x += m_hspd;
-
+//x += m_hspd;
+    
 //Vert. collision
 if (place_meeting(x, y+m_vspd, obj_solid)){
     while(!place_meeting(x, y+sign(m_vspd), obj_solid)){
@@ -70,7 +71,12 @@ if (place_meeting(x, y+m_vspd, obj_solid)){
     }
     m_vspd = 0;
 } 
+    
 y += m_vspd;
+    
+if (m_canMove){
+    x += m_hspd;    
+}
 
 
 /*

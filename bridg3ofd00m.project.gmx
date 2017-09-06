@@ -15,6 +15,7 @@
       <sprite>sprites\spr_controller</sprite>
       <sprite>sprites\spr_pause</sprite>
       <sprite>sprites\spr_teleport</sprite>
+      <sprite>sprites\spr_trigger</sprite>
     </sprites>
     <sprites name="_bridgeleftovers">
       <sprite>sprites\spr_boom</sprite>
@@ -68,6 +69,13 @@
     </sprites>
     <sprites name="abilityPickups">
       <sprite>sprites\spr_abilityPickup</sprite>
+    </sprites>
+    <sprites name="bosses">
+      <sprites name="executioner">
+        <sprite>sprites\spr_executioner</sprite>
+        <sprite>sprites\spr_executionerIdle</sprite>
+        <sprite>sprites\spr_executionerOpen</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -127,6 +135,7 @@
       <object>objects\obj_gotoRoom</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_teleport</object>
+      <object>objects\obj_trigger</object>
     </objects>
     <objects name="Camera">
       <object>objects\obj_camera</object>

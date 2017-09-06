@@ -79,7 +79,7 @@ if (object_get_sprite(obj_player) == spr_player){ //facing right
     <instance objName="obj_gotoRoom" x="0" y="32" name="inst_DC9F1846" locked="0" code="target_x = 512;&#xA;target_y = 592;&#xA;&#xA;target_r = rm_pits;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
-  <PhysicsWorld>-1</PhysicsWorld>
+  <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
   <PhysicsWorldLeft>0</PhysicsWorldLeft>
   <PhysicsWorldRight>1024</PhysicsWorldRight>
