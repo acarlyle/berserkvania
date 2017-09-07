@@ -33,6 +33,7 @@ m_airborn = false;
 m_facingLeft = false;
 m_facingRight = true;
 m_canMove = true;
+m_attacking = false;
 
 //unlocked abilities
 m_hasSword = false;
@@ -180,6 +181,32 @@ surface_reset_target();
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///reset sprite to normal
+
+m_attacking = false;
+sprite_index = spr_playerSword;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -319,30 +346,6 @@ scr_updateMap();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_trigger">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>m_canMove = false;
-alarm[2] = room_speed * 6;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_boom">
       <action>
         <libid>1</libid>
@@ -373,6 +376,30 @@ else if (obj_player.x &lt; obj_boom.x){
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_trigger">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>m_canMove = false;
+alarm[2] = room_speed * 6;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_abilityPickup">
       <action>
         <libid>1</libid>
@@ -394,6 +421,7 @@ else if (obj_player.x &lt; obj_boom.x){
     m_hasSword = true;
     instance_destroy(obj_sword);
     instance_destroy(obj_abilityPickup);
+    sprite_index = spr_playerSword;
 }
 </string>
           </argument>
@@ -505,7 +533,6 @@ draw_surface(global.mapSurf, 320*global.scaleRes - 100, 20);
 
 var bazookaAngle = 0;
 var bazookaSpr = spr_bazooka;
-var weaponSpr = spr_greatSword;
 
 if (sprite_index == spr_playerLeft){
     bazookaSpr = spr_bazookaLeft;
@@ -514,14 +541,12 @@ if (sprite_index == spr_playerCrouchedLeft){
     bazookaSpr = spr_bazookaLeft;
 }
 
-if (m_z){
-    if (bazookaSpr == spr_bazooka){
-        bazookaAngle = 45;
-    }
-    else if (bazookaSpr == spr_bazookaLeft){
-        bazookaAngle = 315;
-    }
-    m_z = false;
+//STABY STAB
+if (m_z &amp;&amp; m_hasSword &amp;&amp; sprite_index != spr_playerSwordStab){
+    sprite_index = spr_playerSwordStab;
+    image_speed = .1;
+    m_attacking = true;
+    alarm[4] = room_speed; //reset sprite back to default
 }
 if (m_c){
     if (bazookaSpr == spr_bazooka){
@@ -533,6 +558,7 @@ if (m_c){
     m_c = false;
 }
 
+/*
 if (m_hasSword){
     if (sprite_index == spr_player || sprite_index == spr_playerLeft){ //player standing
         //draw_sprite_ext(bazookaSpr, image_index, x, y, 1, 1, bazookaAngle, c_white, 1); 
@@ -546,7 +572,7 @@ if (m_hasSword){
     
     }
 }
-
+*/
 //draw_surface(surf, 112, 256);
 //draw_surface(mapSurf, 112, 256);
 //draw_surface_part(mapSurf, 

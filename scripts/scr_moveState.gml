@@ -44,6 +44,7 @@ global.moving = false;
 scr_getInput();
 
 var move = -m_leftArrow + m_rightArrow;
+if move != 0 && !m_attacking image_xscale = move;
 m_hspd = move * m_moveSpeed;
     
 //if (m_leftArrow){
