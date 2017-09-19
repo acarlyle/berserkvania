@@ -41,6 +41,7 @@ global.drawMap = true;
 global.mapChunkX = 0;
 global.mapChunkY = 0;
 global.currentRoom = rm_pits;
+global.dark = false;
 
 
 

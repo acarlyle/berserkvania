@@ -57,6 +57,7 @@ m_jumpSpeed = 6;
 m_vspd = 0;
 m_grav = .2;
 m_numDashes = 3;
+m_glowSize = 1;
 
 //player starting cell
 //m_cellX = 500 &lt;&lt; 8 | (phy_position_x &amp; (255));
@@ -176,6 +177,8 @@ for (var xx = 0; xx &lt; 5; xx++){
 //surface_reset_target();
 
 surface_reset_target();
+
+light = surface_create(320*global.scaleRes, 180*global.scaleRes);
 </string>
           </argument>
         </arguments>
@@ -312,6 +315,40 @@ m_state = scr_moveState;
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//lighting around player 
+/*
+if (global.dark){
+    //show_debug_message("its dark baby")
+    size = 48;
+    draw_set_blend_mode(bm_subtract);
+    surface_set_target(darkness);
+    draw_ellipse_color(x-size/2-view_xview+random_range(-1,1), y-size/2-view_yview+random_range(-1,1), x+size/2-view_xview+random_range(-1,1), y+size/2-view_yview+random_range(-1,1), c_white, c_black, false);
+    surface_reset_target();
+    draw_set_blend_mode(bm_normal);
+} 
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -338,6 +375,24 @@ m_state = scr_moveState;
 
 //show_debug_message(string(floor(phy_position_x / 320)))
 //show_debug_message(string(floor(phy_position_y / 180)))
+
+//if (m_attacking){
+//    if (collision_rectangle(x, y, x+15, y+15, obj_enemy, false, true)){
+//        show_debug_message('die, twattercunt!');
+//        instance_destroy(obj_enemy);
+//    } 
+//}
+
+//if (m_attscking){
+
+    //instance_create(x, y, obj_hitbox);
+//}
+
+if (global.dark){
+    var glowFlutter = choose(0.1, -.1, 0);
+    m_glowSize += glowFlutter;
+    m_glowSize = clamp(m_glowSize, .8, 1.2);
+}
 
 
 scr_updateMap();
@@ -527,7 +582,7 @@ draw_surface(global.mapSurf, 320*global.scaleRes - 100, 20);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw bazooka + player
+            <string> ///Draw bazooka + player
 
 //src_drawHUD();
 
@@ -597,16 +652,6 @@ for (var xx = 0; xx &lt; 5; xx++){
 */
 
 draw_self();
-
-
-
-//lighting around player
-//size = 128;
-//draw_set_blend_mode(bm_subtract);
-//surface_set_target(light);
-//draw_ellipse_color(x-size/2-view_xview+random_range(-1,1), y-size/2-view_yview+random_range(-1,1), x+size/2-view_xview+random_range(-1,1), y+size/2-view_yview+random_range(-1,1), c_white, c_black, false);
-//surface_reset_target();
-//draw_set_blend_mode(bm_normal); 
 </string>
           </argument>
         </arguments>
