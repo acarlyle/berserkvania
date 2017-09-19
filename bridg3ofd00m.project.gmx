@@ -84,6 +84,10 @@
     </sprites>
     <sprites name="lighting">
       <sprite>sprites\spr_glow</sprite>
+      <sprite>sprites\spr_torch</sprite>
+    </sprites>
+    <sprites name="Env">
+      <sprite>sprites\spr_water</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -138,6 +142,7 @@
         <object>objects\obj_triUpRight1x1</object>
         <object>objects\obj_triDownRight1x1</object>
       </objects>
+      <object>objects\obj_water</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_controller</object>
@@ -189,6 +194,7 @@
     <object>objects\obj_hitbox</object>
     <objects name="lighting">
       <object>objects\obj_darkness</object>
+      <object>objects\obj_torch</object>
     </objects>
   </objects>
   <rooms name="rooms">

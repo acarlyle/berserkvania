@@ -43,6 +43,16 @@ global.moving = false;
 //Player movement
 scr_getInput();
 
+//check if no longer underwater
+if (m_underwater){
+    if (!position_meeting(x, y, obj_water)){
+        show_debug_message("NO MORE WATER");
+        m_underwater = false;   
+        m_jumpSpeed += 2;  
+        m_moveSpeed += 1;
+    }
+}
+
 var move = -m_leftArrow + m_rightArrow;
 if move != 0 && !m_attacking image_xscale = move;
 m_hspd = move * m_moveSpeed;

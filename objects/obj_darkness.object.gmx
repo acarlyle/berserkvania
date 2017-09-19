@@ -117,7 +117,13 @@ if (alpha &lt; .99){
 surface_set_target(darkness);
 draw_clear(c_black);
 
-with(obj_player){
+with(obj_player){ //draw player's light
+    //draw_set_blend_mode(bm_src_color);
+    //draw_sprite_ext(spr_glow, 0, x, y, m_glowSize, m_glowSize, 0, c_white, 1);
+    //draw_set_blend_mode(bm_normal);
+}
+
+with(obj_torch){
     draw_set_blend_mode(bm_src_color);
     draw_sprite_ext(spr_glow, 0, x, y, m_glowSize, m_glowSize, 0, c_white, 1);
     draw_set_blend_mode(bm_normal);

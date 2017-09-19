@@ -34,6 +34,7 @@ m_facingLeft = false;
 m_facingRight = true;
 m_canMove = true;
 m_attacking = false;
+m_underwater = false;
 
 //unlocked abilities
 m_hasSword = false;
