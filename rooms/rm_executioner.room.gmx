@@ -68,7 +68,7 @@ print('ENTERED EXECUTIONER');
   </views>
   <instances>
     <instance objName="obj_camera" x="1760" y="256" name="inst_613DBEE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_executioner" x="1584" y="704" name="inst_4FF535DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_executioner" x="1584" y="800" name="inst_4FF535DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport" x="3168" y="0" name="inst_5F78CD83" locked="0" code="" scaleX="1" scaleY="28" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport" x="0" y="0" name="inst_797A908E" locked="0" code="" scaleX="1" scaleY="28" colour="4294967295" rotation="0"/>
     <instance objName="obj_trigger" x="32" y="0" name="inst_70896312" locked="0" code="" scaleX="98.5" scaleY="3" colour="4294967295" rotation="0"/>

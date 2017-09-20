@@ -190,6 +190,7 @@
     </objects>
     <objects name="bosses">
       <object>objects\obj_executioner</object>
+      <object>objects\obj_blood</object>
     </objects>
     <object>objects\obj_hitbox</object>
     <objects name="lighting">
