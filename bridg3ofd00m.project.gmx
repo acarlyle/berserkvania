@@ -74,6 +74,7 @@
         <sprite>sprites\spr_executioner</sprite>
         <sprite>sprites\spr_executionerIdle</sprite>
         <sprite>sprites\spr_executionerOpen</sprite>
+        <sprite>sprites\spr_fireball</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
@@ -88,6 +89,7 @@
     </sprites>
     <sprites name="Env">
       <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\mask_water</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -119,6 +121,15 @@
     </scripts>
     <scripts name="Helper Functions">
       <script>scripts\print.gml</script>
+    </scripts>
+    <scripts name="Water">
+      <script>scripts\numeric_springing.gml</script>
+      <script>scripts\array_smooth_1d.gml</script>
+    </scripts>
+    <scripts name="bosses">
+      <scripts name="executioner">
+        <script>scripts\scr_execAttackSpiral.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -189,8 +200,11 @@
       <object>objects\obj_sword</object>
     </objects>
     <objects name="bosses">
-      <object>objects\obj_executioner</object>
-      <object>objects\obj_blood</object>
+      <objects name="executioner">
+        <object>objects\obj_blood</object>
+        <object>objects\obj_executioner</object>
+        <object>objects\obj_fireball</object>
+      </objects>
     </objects>
     <object>objects\obj_hitbox</object>
     <objects name="lighting">

@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>print('EXECUTIONER_BOSS_CREATE\n');
 
+m_projectileAngle = 90;
+
 //spawn blocks
 for (var xx = 0; xx &lt; 3200; xx+=16){
     instance_create(xx, 888, obj_solid8x1);
@@ -44,7 +46,14 @@ for (var xx = 0; xx &lt; 3200; xx+=16){
     instance_create(xx, 888, obj_water);
     instance_create(xx, 904, obj_water);
     
-} 
+}
+
+//instance_create(0, 880, obj_water);
+//with(obj_water){
+//    image_xscale += 200;
+//} 
+
+
 
 var idX = instance_position(0, 888, obj_solid1x1);
 if (idX) {
@@ -87,6 +96,8 @@ part_type_life(partPuddle,50,60);
 
 //Create Emitter
 partBlood_emit = part_emitter_create(partBlood_sys);
+
+m_state = "idle";
 </string>
           </argument>
         </arguments>
@@ -110,6 +121,8 @@ partBlood_emit = part_emitter_create(partBlood_sys);
           <argument>
             <kind>1</kind>
             <string>sprite_index = spr_executioner;
+
+m_state = scr_execAttackSpiral;
 </string>
           </argument>
         </arguments>
@@ -132,7 +145,9 @@ partBlood_emit = part_emitter_create(partBlood_sys);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*var left = keyboard_check(vk_left);
+            <string>///boss logic
+
+/*var left = keyboard_check(vk_left);
 var right = keyboard_check(vk_right);
 
 if (obj_player.phy_position_x &gt; 224 &amp;&amp; right){
