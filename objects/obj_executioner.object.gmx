@@ -27,7 +27,13 @@
             <kind>1</kind>
             <string>print('EXECUTIONER_BOSS_CREATE\n');
 
+m_busy = false;
+
+m_xFireBallOffset = 0;
+m_yFireBallOffset = 0;
+
 m_projectileAngle = 90;
+doingSomething = false;
 
 //spawn blocks
 for (var xx = 0; xx &lt; 3200; xx+=16){
@@ -60,7 +66,8 @@ if (idX) {
     print(idX);
 }
 
-alarm[0] = room_speed * 5; 
+alarm[0] = room_speed * 2; //idle 
+m_state = exec_idle;
 
 //Blood System
 partBlood_sys = part_system_create();
@@ -96,8 +103,76 @@ part_type_life(partPuddle,50,60);
 
 //Create Emitter
 partBlood_emit = part_emitter_create(partBlood_sys);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///END SPIRAL
+show_debug_message("END SPIRAL");
+m_busy = false;
+alarm[1] = -1;
 
-m_state = "idle";
+m_state=exec_idle;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(x + m_xFireBallOffset, y + m_yFireBallOffset, obj_fireball);
+
+//m_xFireBall++;
+//m_yFireBall++;
+
+if (m_xFireBallOffset % 50 == 0){
+    m_xFireBallOffset = m_xFireBallOffset - 5; 
+}
+else{
+    m_xFireBallOffset += 5;
+}
+
+if (m_yFireBallOffset % 20 == 0){
+    m_yFireBallOffset = m_yFireBallOffset - 4; 
+}
+else{
+    m_yFireBallOffset += 4;
+}
+
+alarm[1] = room_speed/4;
 </string>
           </argument>
         </arguments>
@@ -122,7 +197,9 @@ m_state = "idle";
             <kind>1</kind>
             <string>sprite_index = spr_executioner;
 
-m_state = scr_execAttackSpiral;
+m_busy = false;
+m_state = exec_attackSpiral;
+show_debug_message("ATTACK SPIRAL");
 </string>
           </argument>
         </arguments>
@@ -170,9 +247,14 @@ else{
 
 //Update Emitter
 //part_emitter_region(partBlood_sys,partBlood_emit,view_xview[0]-400,view_xview[0]+view_wview[0],view_yview[0]-100, view_yview[0]-100,ps_shape_line,ps_distr_linear);
-part_emitter_region(partBlood_sys,partBlood_emit,x,x,y, y,ps_shape_line,ps_distr_linear);
+part_emitter_region(partBlood_sys,partBlood_emit,x,x,y-26, y,ps_shape_line,ps_distr_linear);
 part_emitter_burst(partBlood_sys,partBlood_emit,partBlood,1);
 
+if (!m_busy){
+    show_debug_message("EXECUTING THING");
+    script_execute(m_state);
+    m_busy = true;
+}
 </string>
           </argument>
         </arguments>
