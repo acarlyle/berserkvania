@@ -25,8 +25,68 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>m_hspd = 3;
-m_vspd = 1;
+            <string>//m_hspd = 3;
+//m_vspd = 1;
+m_dir = 0;
+m_spd = 0;
+//direction = 90;
+//speed = 1;
+//motion_set(dir, spd);
+
+alarm[1] = room_speed; //destroy fireball
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///destroy fireball
+
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///switch sprite to fireballDying
+
+sprite_index = spr_fireBallDying;
+image_speed = .1;
+
+alarm[2] = room_speed; //destroy
 </string>
           </argument>
         </arguments>
@@ -74,8 +134,16 @@ m_state = idle;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += m_hspd;
-y += m_vspd;
+            <string>//x += m_hspd;
+//y += m_vspd;
+
+//print(m_hspd);
+
+//print(direction);
+
+//print(dir);
+
+motion_set(m_dir, m_spd);
 </string>
           </argument>
         </arguments>

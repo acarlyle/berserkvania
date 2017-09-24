@@ -29,9 +29,12 @@
 
 m_busy = false;
 
-m_xFireBallOffset = 0;
-m_yFireBallOffset = 0;
+m_numSpiral = 1;
 
+m_xFireBallOffset = 10;
+m_yFireBallOffset = -30;
+m_fireBallHspd = 3;
+m_fireBallVspd = 0;
 m_projectileAngle = 90;
 doingSomething = false;
 
@@ -153,26 +156,158 @@ m_state=exec_idle;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x + m_xFireBallOffset, y + m_yFireBallOffset, obj_fireball);
+            <string>///SPIRAL ATTACK RECURSIVE ALARM
 
-//m_xFireBall++;
-//m_yFireBall++;
+var dir = 0;
+var spd = 1;
 
-if (m_xFireBallOffset % 50 == 0){
-    m_xFireBallOffset = m_xFireBallOffset - 5; 
+switch (m_numSpiral){
+    case 1:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 3;
+        m_fireBallVspd = 0;
+        dir = 0;
+        m_numSpiral++;
+        break;
+    case 2:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 2;
+        m_fireBallVspd = 2;
+        dir = 315;
+        m_numSpiral++;
+        break;
+    case 3:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 0;
+        m_fireBallVspd = 3;
+        dir = 270;
+        m_numSpiral++;
+        break;
+    case 4:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = -2;
+        m_fireBallVspd = 2;
+        dir = 225;
+        m_numSpiral++;
+        break;
+    case 5:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = -3;
+        m_fireBallVspd = 0;
+        dir = 180;
+        m_numSpiral++;
+        break;
+    case 6:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = -2;
+        m_fireBallVspd = -2;
+        dir = 135;
+        m_numSpiral++;
+        break;
+    case 7:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 0;
+        m_fireBallVspd = -3;
+        dir = 90;
+        m_numSpiral++;
+        break;
+    case 8:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 2;
+        m_fireBallVspd = -2;
+        dir = 45;
+        m_numSpiral++;
+        break;
+        
+    //loop back around in position shifted to the right 
+        
+    case 9:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 2;
+        m_fireBallVspd = 2;
+        dir = 337.5;
+        m_numSpiral++;
+        break;
+    case 10:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 2;
+        m_fireBallVspd = 2;
+        dir = 292.5;
+        m_numSpiral++;
+        break;
+    case 11:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 0;
+        m_fireBallVspd = 3;
+        dir = 247.5;
+        m_numSpiral++;
+        break;
+    case 12:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = -2;
+        m_fireBallVspd = 2;
+        dir = 202.5;
+        m_numSpiral++;
+        break;
+    case 13:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = -3;
+        m_fireBallVspd = 0;
+        dir = 157.5;
+        m_numSpiral++;
+        break;
+    case 14:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = -2;
+        m_fireBallVspd = -2;
+        dir = 112.5;
+        m_numSpiral++;
+        break;
+    case 15:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 0;
+        m_fireBallVspd = -3;
+        dir = 67.5;
+        m_numSpiral++;
+        break;
+    case 16:
+        m_xFireBallOffset = 0;
+        m_yFireBallOffset = -35;
+        m_fireBallHspd = 2;
+        m_fireBallVspd = -2;
+        dir = 22.5;
+        m_numSpiral = 1;
+        break;
 }
-else{
-    m_xFireBallOffset += 5;
-}
+//m_numSpiral++;
+//print(m_numSpiral);
 
-if (m_yFireBallOffset % 20 == 0){
-    m_yFireBallOffset = m_yFireBallOffset - 4; 
-}
-else{
-    m_yFireBallOffset += 4;
-}
+fireball = instance_create(x + m_xFireBallOffset, y + m_yFireBallOffset, obj_fireball);
+fireball.m_hspd = obj_executioner.m_fireBallHspd;
+fireball.m_vspd = obj_executioner.m_fireBallVspd;
+fireball.m_dir = dir;
+fireball.m_spd = spd;
+//fireball.image_angle = dir;
 
-alarm[1] = room_speed/4;
+//print(fireball.m_hspd);
+//}
+
+alarm[1] = room_speed/16;
 </string>
           </argument>
         </arguments>
@@ -238,19 +373,18 @@ if (obj_player.phy_position_x &gt; 224 &amp;&amp; right){
     }  
 }*/
 
-if (x &lt; obj_player.x){
-    x += 1;
-}
-else{
-    x -= 1;
-}
-
 //Update Emitter
 //part_emitter_region(partBlood_sys,partBlood_emit,view_xview[0]-400,view_xview[0]+view_wview[0],view_yview[0]-100, view_yview[0]-100,ps_shape_line,ps_distr_linear);
 part_emitter_region(partBlood_sys,partBlood_emit,x,x,y-26, y,ps_shape_line,ps_distr_linear);
 part_emitter_burst(partBlood_sys,partBlood_emit,partBlood,1);
 
 if (!m_busy){
+    if (x &lt; obj_player.x){
+        x += 1;
+    }
+    else{
+        x -= 1;
+    }
     show_debug_message("EXECUTING THING");
     script_execute(m_state);
     m_busy = true;

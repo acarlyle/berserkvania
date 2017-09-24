@@ -75,6 +75,7 @@
         <sprite>sprites\spr_executionerIdle</sprite>
         <sprite>sprites\spr_executionerOpen</sprite>
         <sprite>sprites\spr_fireball</sprite>
+        <sprite>sprites\spr_fireBallDying</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
@@ -126,7 +127,7 @@
       <script>scripts\numeric_springing.gml</script>
       <script>scripts\array_smooth_1d.gml</script>
     </scripts>
-    <scripts name="bosses">
+    <scripts name="Bosses">
       <scripts name="executioner">
         <script>scripts\exec_attackSpiral.gml</script>
         <script>scripts\exec_idle.gml</script>
