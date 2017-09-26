@@ -35,6 +35,8 @@ m_facingRight = true;
 m_canMove = true;
 m_attacking = false;
 m_underwater = false;
+m_hit = false;
+m_blinking = false;
 
 //unlocked abilities
 m_hasSword = false;
@@ -180,6 +182,34 @@ for (var xx = 0; xx &lt; 5; xx++){
 surface_reset_target();
 
 light = surface_create(320*global.scaleRes, 180*global.scaleRes);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///stop blinking after being struck
+
+show_debug_message("no more blink");
+sprite_index = spr_playerSword;
+m_hit = false;
+m_blinking = false;
 </string>
           </argument>
         </arguments>
@@ -395,6 +425,14 @@ if (global.dark){
     m_glowSize = clamp(m_glowSize, .8, 1.2);
 }
 
+if (m_hit &amp;&amp; !m_blinking){
+    //print("LIGHTS OUT JEW");
+    alarm[5] = room_speed; //blink and invincible period
+    sprite_index = spr_playerHurt;
+    image_speed = .2;
+    m_blinking = true;
+}
+
 
 scr_updateMap();
 </string>
@@ -450,7 +488,7 @@ else if (obj_player.x &lt; obj_boom.x){
           <argument>
             <kind>1</kind>
             <string>m_canMove = false;
-alarm[2] = room_speed * 6;
+alarm[2] = room_speed * 3;
 </string>
           </argument>
         </arguments>
@@ -600,9 +638,9 @@ if (sprite_index == spr_playerCrouchedLeft){
 //STABY STAB
 if (m_z &amp;&amp; m_hasSword &amp;&amp; sprite_index != spr_playerSwordStab){
     sprite_index = spr_playerSwordStab;
-    image_speed = .1;
+    image_speed = .3;
     m_attacking = true;
-    alarm[4] = room_speed; //reset sprite back to default
+    alarm[4] = room_speed/3; //reset sprite back to default
 }
 if (m_c){
     if (bazookaSpr == spr_bazooka){

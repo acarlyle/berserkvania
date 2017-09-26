@@ -27,8 +27,16 @@
             <kind>1</kind>
             <string>print('EXECUTIONER_BOSS_CREATE\n');
 
-m_busy = false;
+m_actionQueue = ds_queue_create();
 
+m_busy = false;
+m_jumpVal = 0; //will jump away from player at 
+
+m_move = 0;
+m_vspd = 1;
+m_hspd = 1;
+
+m_numJump = 1;
 m_numSpiral = 1;
 
 m_xFireBallOffset = 10;
@@ -106,6 +114,73 @@ part_type_life(partPuddle,50,60);
 
 //Create Emitter
 partBlood_emit = part_emitter_create(partBlood_sys);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///JUMP AWAY
+
+if (m_numJump == 1){ //set direction of jump
+    with (obj_player){
+        if (obj_executioner.x &lt;= obj_player.x){
+            obj_executioner.m_move = -1;
+        }
+        else{
+            obj_executioner.m_move = 1;
+        }
+    }
+}
+
+print(m_move);
+
+if (m_numJump &lt; 20){
+    x += (m_move * m_hspd);
+    y -= m_vspd;
+}
+
+else {
+    x += (m_move * m_hspd);
+    y += m_vspd;
+}
+
+m_numJump++;
+
+//print("JUMPING!!");
+
+if (m_numJump == 39){
+    m_busy = false;
+    m_numJump = 0;
+    m_jumpVal = 
+    print("END JUMPMAN");
+    w1 = instance_create(x, y+65, obj_shockwave);
+    w2 = instance_create(x, y+65, obj_shockwave);
+    w1.m_move = 1;
+    w2.m_move = -1;
+    
+    
+}
+
+else{
+    alarm[3] = room_speed/16;
+}
 </string>
           </argument>
         </arguments>
@@ -378,17 +453,40 @@ if (obj_player.phy_position_x &gt; 224 &amp;&amp; right){
 part_emitter_region(partBlood_sys,partBlood_emit,x,x,y-26, y,ps_shape_line,ps_distr_linear);
 part_emitter_burst(partBlood_sys,partBlood_emit,partBlood,1);
 
+with (obj_player){
+    if (abs(obj_player.x - obj_executioner.x) &lt; 15 &amp;&amp; abs(obj_player.y - (obj_executioner.y + 80)) &lt; 10){
+        //print("TOUCHING");
+        obj_executioner.m_jumpVal++;
+    }
+}
+
+//print(m_jumpVal);
+
+if (m_jumpVal == 100){
+    ds_queue_enqueue(m_actionQueue, scr_execJump);
+    print("JUMP COMIN UP");
+}
+
 if (!m_busy){
-    if (x &lt; obj_player.x){
-        x += 1;
+
+    if (!ds_queue_empty(m_actionQueue)){
+        m_state = ds_queue_dequeue(m_actionQueue);
+        print("yah!");
+        //print(m_state);   
     }
+    
     else{
-        x -= 1;
+        
     }
+    
     show_debug_message("EXECUTING THING");
     script_execute(m_state);
     m_busy = true;
 }
+
+//print(obj_executioner.y + 80);
+//print("player:");
+//print(obj_player.y);
 </string>
           </argument>
         </arguments>

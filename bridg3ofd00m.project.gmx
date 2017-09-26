@@ -50,6 +50,7 @@
           <sprite>sprites\spr_solid8x1</sprite>
         </sprites>
       </sprites>
+      <sprite>sprites\spr_swordStabBackup</sprite>
     </sprites>
     <sprites name="map">
       <sprite>sprites\spr_mapPiece_Open</sprite>
@@ -76,10 +77,12 @@
         <sprite>sprites\spr_executionerOpen</sprite>
         <sprite>sprites\spr_fireball</sprite>
         <sprite>sprites\spr_fireBallDying</sprite>
+        <sprite>sprites\spr_shockwave</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_playerSword</sprite>
+      <sprite>sprites\spr_playerHurt</sprite>
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_playerSwordStab</sprite>
       <sprite>sprites\spr_stabHitbox</sprite>
@@ -131,6 +134,8 @@
       <scripts name="executioner">
         <script>scripts\exec_attackSpiral.gml</script>
         <script>scripts\exec_idle.gml</script>
+        <script>scripts\scr_execJump.gml</script>
+        <script>scripts\scr_execNormie.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -206,6 +211,7 @@
         <object>objects\obj_blood</object>
         <object>objects\obj_executioner</object>
         <object>objects\obj_fireball</object>
+        <object>objects\obj_shockwave</object>
       </objects>
     </objects>
     <object>objects\obj_hitbox</object>

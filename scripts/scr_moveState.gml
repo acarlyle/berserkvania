@@ -54,7 +54,7 @@ if (m_underwater){
 }
 
 var move = -m_leftArrow + m_rightArrow;
-if move != 0 && !m_attacking image_xscale = move;
+if move != 0 && !m_attacking image_xscale = move; //flip sprite
 m_hspd = move * m_moveSpeed;
     
 //if (m_leftArrow){
