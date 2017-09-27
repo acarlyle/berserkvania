@@ -31,10 +31,13 @@ m_actionQueue = ds_queue_create();
 
 m_busy = false;
 m_jumpVal = 0; //will jump away from player at 
+m_hurt = false;
+m_blinking = false;
 
 m_move = 0;
 m_vspd = 1;
 m_hspd = 1;
+m_hp = 100;
 
 m_numJump = 1;
 m_numSpiral = 1;
@@ -114,6 +117,35 @@ part_type_life(partPuddle,50,60);
 
 //Create Emitter
 partBlood_emit = part_emitter_create(partBlood_sys);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///cease blinking 
+
+sprite_index = spr_executioner;
+m_hurt = false;
+m_blinking = false;
+
+print("CEASE EXEC BLINKING");
 </string>
           </argument>
         </arguments>
@@ -482,6 +514,14 @@ if (!m_busy){
     show_debug_message("EXECUTING THING");
     script_execute(m_state);
     m_busy = true;
+}
+
+if (m_hurt &amp;&amp; !m_blinking){
+    alarm[4] = room_speed/3; //blink and invulnerability period
+    sprite_index = spr_executionerBlink;
+    image_speed = .1;
+    print("BLINK ALARM SET");
+    m_blinking = true;
 }
 
 //print(obj_executioner.y + 80);

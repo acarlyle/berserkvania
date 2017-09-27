@@ -433,6 +433,35 @@ if (m_hit &amp;&amp; !m_blinking){
     m_blinking = true;
 }
 
+if (sprite_index == spr_playerSwordStab){
+    var inst;
+    if (image_xscale == 1){ //facing right
+        inst = collision_rectangle(x+5, y-8, x+17, y+5, obj_enemy, false, true);
+        //print("facing right");
+    }
+    else{ //facing left
+        inst = collision_rectangle(x-5, y-8, x-17, y+5, obj_enemy, false, true);
+        //print("facing left");
+    }
+    if inst != noone
+    {
+        with (inst) {
+            //print("CATCH A CUNT BY HIS TOE");
+            if (!m_hurt){ // to prevent constantly taking damage
+                //print(inst.m_hurt);
+                m_hurt = true;
+                m_hp -=5;
+                print(m_hp);
+                if (m_hp &lt;= 0){
+                    instance_destroy();
+                }
+                //print("HURT IS NOW TRUE");
+                //print(inst.m_hurt);
+            }
+        }
+    }
+}
+
 
 scr_updateMap();
 </string>
@@ -689,6 +718,17 @@ for (var xx = 0; xx &lt; 5; xx++){
     }
 } 
 */
+
+//hitbox debugging
+if (sprite_index == spr_playerSwordStab){
+    draw_set_colour(c_yellow);
+    if (image_xscale == 1){ //facing right
+        draw_rectangle(x+5, y-8, x+17, y+5, false);
+    }
+    else{ //facing left
+        draw_rectangle(x-5, y-8, x-17, y+5, false);
+    }
+}
 
 draw_self();
 </string>

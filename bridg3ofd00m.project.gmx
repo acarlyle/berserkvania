@@ -73,6 +73,7 @@
     <sprites name="bosses">
       <sprites name="executioner">
         <sprite>sprites\spr_executioner</sprite>
+        <sprite>sprites\spr_executionerBlink</sprite>
         <sprite>sprites\spr_executionerIdle</sprite>
         <sprite>sprites\spr_executionerOpen</sprite>
         <sprite>sprites\spr_fireball</sprite>
