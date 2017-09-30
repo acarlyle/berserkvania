@@ -24,7 +24,7 @@ if (global.curCellX != global.newCellX){
         //global.mapCellX++;
     }
     global.updateMap = true;
-    show_debug_message('1!');
+    //show_debug_message('1!');
 }
 //show_debug_message('newGuy');
 //show_debug_message(string(global.curCellY));
@@ -42,14 +42,14 @@ if (global.curCellY != global.newCellY){
         //global.mapCellY--;
     }
     global.updateMap = true;
-    show_debug_message('2!');
+    //show_debug_message('2!');
 }
 if (global.updateMap){
-    show_debug_message('UPDATING MAP!');
+    //show_debug_message('UPDATING MAP!');
     global.map[global.miniX,global.miniY] |= $80;
         
-    print(global.miniX);
-    print(global.miniY);
+    //print(global.miniX);
+    //print(global.miniY);
     
 }
     //show_debug_message(global.map[global.mapCellX>>8,global.mapCellY>>8])

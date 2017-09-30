@@ -232,7 +232,7 @@ if is_array(__array) {
           <argument>
             <kind>1</kind>
             <string>if (!obj_player.m_underwater){
-    show_debug_message("ENGAGE UNDERWATER SEQUENCE");
+    //show_debug_message("ENGAGE UNDERWATER SEQUENCE");
     
     obj_player.m_underwater = true;  
     obj_player.m_jumpSpeed -= 2; 

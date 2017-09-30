@@ -1,9 +1,5 @@
 ///scr_execNormie
 
-if (x < obj_player.x){
-    x += 1;
-}
+print('we normie now');
 
-else{
-    x -= 1;
-}
+alarm[6] = room_speed * 2;

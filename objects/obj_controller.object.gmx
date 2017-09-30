@@ -28,6 +28,8 @@
             <string>//game settings
 global.scaleRes = 4;
 
+randomize(); //randomizes seed for random functions
+
 m_displayx = 0;
 m_displayy = 0;
 m_displayScale = 0;
