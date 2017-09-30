@@ -124,6 +124,39 @@ partBlood_emit = part_emitter_create(partBlood_sys);
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.defeated_Executioner = true;
+
+//clean up particle system
+part_type_destroy(partBlood);
+part_emitter_destroy(partBlood_sys, partBlood_emit);
+part_system_destroy(partBlood_sys);
+
+//destroy dynamic data structs
+ds_queue_destroy(m_actionQueue);
+
+print("defeated exec set!");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="6">
       <action>
         <libid>1</libid>
@@ -557,7 +590,7 @@ else if (m_state == scr_execNormie){ //catchup to player
         x -= 1;
     }
 
-print('we normie now');
+//print('we normie now');
 
 }
 

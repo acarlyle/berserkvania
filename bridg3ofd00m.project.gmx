@@ -9,6 +9,25 @@
     <sound>sound\bgm_basicBitchBass</sound>
   </sounds>
   <sprites name="sprites">
+    <sprites name="Environment">
+      <sprites name="Blocks">
+        <sprite>sprites\spr_solid</sprite>
+        <sprite>sprites\spr_triUpRight1x1</sprite>
+        <sprite>sprites\spr_triUpLeft1x1</sprite>
+        <sprite>sprites\spr_triDownLeft1x1</sprite>
+        <sprite>sprites\spr_triDownRight1x1</sprite>
+        <sprite>sprites\spr_solid1x2</sprite>
+        <sprite>sprites\spr_solid1x4</sprite>
+        <sprite>sprites\spr_solid1x8</sprite>
+        <sprite>sprites\spr_solid2x1</sprite>
+        <sprite>sprites\spr_solid2x2</sprite>
+        <sprite>sprites\spr_solid4x1</sprite>
+        <sprite>sprites\spr_solid8x1</sprite>
+        <sprites name="Destructible">
+          <sprite>sprites\spr_solid1x1_des</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
     <sprites name="Controllers">
       <sprite>sprites\spr_gotoRoom</sprite>
       <sprite>sprites\spr_controller</sprite>
@@ -34,22 +53,6 @@
       <sprite>sprites\spr_rocketLeft</sprite>
       <sprite>sprites\spr_dashBoxUsed</sprite>
       <sprite>sprites\spr_greatSword</sprite>
-      <sprites name="Environment">
-        <sprites name="Blocks">
-          <sprite>sprites\spr_solid</sprite>
-          <sprite>sprites\spr_triUpRight1x1</sprite>
-          <sprite>sprites\spr_triUpLeft1x1</sprite>
-          <sprite>sprites\spr_triDownLeft1x1</sprite>
-          <sprite>sprites\spr_triDownRight1x1</sprite>
-          <sprite>sprites\spr_solid1x2</sprite>
-          <sprite>sprites\spr_solid1x4</sprite>
-          <sprite>sprites\spr_solid1x8</sprite>
-          <sprite>sprites\spr_solid2x1</sprite>
-          <sprite>sprites\spr_solid2x2</sprite>
-          <sprite>sprites\spr_solid4x1</sprite>
-          <sprite>sprites\spr_solid8x1</sprite>
-        </sprites>
-      </sprites>
       <sprite>sprites\spr_swordStabBackup</sprite>
     </sprites>
     <sprites name="map">
@@ -98,6 +101,7 @@
       <sprite>sprites\spr_water</sprite>
       <sprite>sprites\mask_water</sprite>
     </sprites>
+    <sprite>sprites\spr_eventTrigger</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -148,6 +152,7 @@
       <object>objects\obj_mapPiece</object>
       <object>objects\obj_abilityPickup</object>
       <object>objects\obj_enemy</object>
+      <object>objects\obj_eventTrigger</object>
     </objects>
     <object>objects\obj_player</object>
     <objects name="Environment">
@@ -162,6 +167,9 @@
         <object>objects\obj_solid8x1</object>
         <object>objects\obj_triUpRight1x1</object>
         <object>objects\obj_triDownRight1x1</object>
+        <objects name="destructible">
+          <object>objects\obj_solid1x1_des</object>
+        </objects>
       </objects>
       <object>objects\obj_water</object>
     </objects>
@@ -170,7 +178,10 @@
       <object>objects\obj_gotoRoom</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_teleport</object>
-      <object>objects\obj_trigger</object>
+      <object>objects\obj_cutsceneTrigger</object>
+      <objects name="Events">
+        <object>objects\obj_destroyBlocks</object>
+      </objects>
     </objects>
     <objects name="Camera">
       <object>objects\obj_camera</object>

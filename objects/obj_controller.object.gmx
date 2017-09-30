@@ -37,6 +37,9 @@ m_cellWidth = 180;
 m_cellHeight = 320;
 m_piecesUsed = 0;
 
+//Bosses defeated
+global.defeated_Executioner = true;
+
 // Map generation
 global.map = ds_grid_create(100, 100);
 global.drawMap = true;
