@@ -46,7 +46,7 @@ scr_getInput();
 //check if no longer underwater
 if (m_underwater){
     if (!position_meeting(x, y, obj_water)){
-        show_debug_message("NO MORE WATER");
+        //print("NO MORE WATER");
         m_underwater = false;   
         m_jumpSpeed += 2;  
         m_moveSpeed += 1;

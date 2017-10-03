@@ -73,19 +73,6 @@
     <sprites name="abilityPickups">
       <sprite>sprites\spr_abilityPickup</sprite>
     </sprites>
-    <sprites name="bosses">
-      <sprites name="executioner">
-        <sprite>sprites\spr_executioner</sprite>
-        <sprite>sprites\spr_executionerDroop</sprite>
-        <sprite>sprites\spr_executionerDrooper</sprite>
-        <sprite>sprites\spr_executionerBlink</sprite>
-        <sprite>sprites\spr_executionerIdle</sprite>
-        <sprite>sprites\spr_executionerOpen</sprite>
-        <sprite>sprites\spr_fireball</sprite>
-        <sprite>sprites\spr_fireBallDying</sprite>
-        <sprite>sprites\spr_shockwave</sprite>
-      </sprites>
-    </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_playerSword</sprite>
       <sprite>sprites\spr_playerHurt</sprite>
@@ -102,6 +89,28 @@
       <sprite>sprites\mask_water</sprite>
     </sprites>
     <sprite>sprites\spr_eventTrigger</sprite>
+    <sprites name="Enemies">
+      <sprites name="bosses">
+        <sprites name="executioner">
+          <sprite>sprites\spr_executioner</sprite>
+          <sprite>sprites\spr_executionerDroop</sprite>
+          <sprite>sprites\spr_executionerDrooper</sprite>
+          <sprite>sprites\spr_executionerBlink</sprite>
+          <sprite>sprites\spr_executionerIdle</sprite>
+          <sprite>sprites\spr_executionerOpen</sprite>
+          <sprite>sprites\spr_fireball</sprite>
+          <sprite>sprites\spr_fireBallDying</sprite>
+          <sprite>sprites\spr_shockwave</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="ordinaries">
+        <sprites name="Dogs">
+          <sprite>sprites\spr_hound_idle</sprite>
+          <sprite>sprites\spr_hound_sniff</sprite>
+          <sprite>sprites\spr_hound_walk</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -132,17 +141,31 @@
     </scripts>
     <scripts name="Helper Functions">
       <script>scripts\print.gml</script>
+      <script>scripts\array.gml</script>
+      <script>scripts\newMap.gml</script>
+      <script>scripts\split.gml</script>
+      <script>scripts\newBvrArr.gml</script>
     </scripts>
     <scripts name="Water">
       <script>scripts\numeric_springing.gml</script>
       <script>scripts\array_smooth_1d.gml</script>
     </scripts>
-    <scripts name="Bosses">
-      <scripts name="executioner">
-        <script>scripts\exec_attackSpiral.gml</script>
-        <script>scripts\exec_idle.gml</script>
-        <script>scripts\scr_execJump.gml</script>
-        <script>scripts\scr_execNormie.gml</script>
+    <scripts name="Enemies">
+      <scripts name="Bosses">
+        <scripts name="executioner">
+          <script>scripts\exec_attackSpiral.gml</script>
+          <script>scripts\exec_idle.gml</script>
+          <script>scripts\scr_execJump.gml</script>
+          <script>scripts\scr_execNormie.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Normals">
+        <scripts name="Dogs">
+          <script>scripts\hound_patrol.gml</script>
+          <script>scripts\hound_sniff.gml</script>
+          <script>scripts\hound_idle.gml</script>
+        </scripts>
+        <script>scripts\scr_engageAIBehavior.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -220,18 +243,23 @@
     <objects name="abilityPickups">
       <object>objects\obj_sword</object>
     </objects>
-    <objects name="bosses">
-      <objects name="executioner">
-        <object>objects\obj_blood</object>
-        <object>objects\obj_executioner</object>
-        <object>objects\obj_fireball</object>
-        <object>objects\obj_shockwave</object>
-      </objects>
-    </objects>
     <object>objects\obj_hitbox</object>
     <objects name="lighting">
       <object>objects\obj_darkness</object>
       <object>objects\obj_torch</object>
+    </objects>
+    <objects name="Enemies">
+      <objects name="Bosses">
+        <objects name="executioner">
+          <object>objects\obj_blood</object>
+          <object>objects\obj_executioner</object>
+          <object>objects\obj_fireball</object>
+          <object>objects\obj_shockwave</object>
+        </objects>
+      </objects>
+      <objects name="Ordinaries">
+        <object>objects\enemy_hound</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

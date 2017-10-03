@@ -469,28 +469,6 @@ scr_updateMap();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_eventTrigger">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_boom">
       <action>
         <libid>1</libid>
@@ -541,6 +519,28 @@ else if (obj_player.x &lt; obj_boom.x){
             <string>m_canMove = false;
 alarm[2] = room_speed * 3;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_eventTrigger">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -615,7 +615,7 @@ m_falling = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var i;
+            <string>/*var i;
 var offSet = 20;
 
 for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
@@ -628,7 +628,7 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
         draw_sprite(spr_dashBoxFull, -1, obj_player.x - 50 - offSet, obj_player.y - 70); 
     }
     offSet += 20;
-}
+}*/
 //draw map
 /*if (global.drawMap == true){
     //show_debug_message('draw the fuckin map');
