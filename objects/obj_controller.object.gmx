@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//game settings
 global.scaleRes = 4;
+gamepad_set_axis_deadzone(0, .7);
 
 randomize(); //randomizes seed for random functions
 
