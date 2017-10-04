@@ -28,14 +28,20 @@
             <string>//behaviors = array(hound_sniff, hound_patrol);
 
 //behaviors = newMap(
-//    hound_sniff, spr_hound_sniff, room_speed*2, .1,
-//    hound_patrol, spr_hound_walk, room_speed * choose(1,2,3), .1
+//    hound_sniff, spr_hound_sniff, room_speed*2, .1, 1
+//    hound_patrol, spr_hound_walk, room_speed * choose(1,2,3), .1, 1
 //                  );
+
+playerSpotted = false;
+attacking = false;
+m_hurt = false;
+m_hp = 10;
                   
 behaviors = newBvrArr(
-    hound_sniff, spr_hound_sniff, room_speed, .1,
-    hound_patrol, spr_hound_walk, room_speed * choose(1,2,3), .1,
-    hound_idle, spr_hound_idle, room_speed*2, .05
+    hound_idle, spr_hound_idle, room_speed*2, .05, 1,
+    hound_sniff, spr_hound_sniff, room_speed, .1, 1,
+    hound_patrol, spr_hound_walk, room_speed * choose(1,2,3), .1, 1,
+    hound_chase, spr_hound_walk, -1, .5, 0,
 );
 
 print("bach");
@@ -60,6 +66,35 @@ xspd = 1;
 yspd = 1;
 
 alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>attacking = false;
+sprite_index = spr_hound_walk;
+
+if (obj_player.x &lt; x){
+    move = -1;
+    image_xscale = move;
+}
 </string>
           </argument>
         </arguments>
@@ -98,9 +133,18 @@ alarm[0] = 1;
 
 //var bvr = ds_map_find_value(behaviors, floor(random_range(0, ds_map_size(behaviors))));
 
-bvr = floor(random_range(0, array_height_2d(behaviors)));
-
-//print(bvr);
+if (playerSpotted){
+    behaviors[0, 4] = 0;
+    behaviors[1, 4] = 0;
+    behaviors[2, 4] = 0;
+    behaviors[3, 4] = 1; //enable chase, disable other bvr
+    bvr = 3;
+    print("PLAYER SPOTTED");
+}
+else{
+    bvr = floor(random_range(0, array_height_2d(behaviors)));
+}
+print(bvr);
 
 dur = behaviors[bvr, 0];
 print(script_get_name(dur));
@@ -163,19 +207,105 @@ if (place_meeting(x, y+yspd, obj_solid)){
 } 
 y += yspd;
 
-//if (sniffOrPatrol == 1){
-//    m_state = hound_patrol;
-//    sprite_index = spr_hound_walk;
-//    image_speed = .1;
-//}
-//else if (sniffOrPatrol == -1){
-//    m_state = hound_sniff;
-//    sprite_index = spr_hound_sniff;
-//    image_speed = .1;
-//}
+//checking if we see player
+if (!playerSpotted){
+    var inst;
+    if (image_xscale == 1){ //facing right
+        inst = collision_rectangle(x-10, y-8, x+140, y+5, obj_player, false, true);
+    }
+    else{ //facing left
+        inst = collision_rectangle(x+10, y-8, x-140, y+5, obj_player, false, true);
+    }
     
+    if inst != noone
+    {
+        //Need to check if an obj is between player and the enemy
+        if (image_xscale == 1){ //facing right
+            inst = collision_line(x-10, y-8, x+140, y+5, obj_solid, false, true);
+            if (inst == noone){ //nothing blocking the player, good to charge
+                playerSpotted = true;
+                alarm[0] = 1;  
+            }
+        }
+        else{
+            inst = collision_line(x+10, y-8, x-140, y+5, obj_solid, false, true);
+            if (inst == noone){ //nothing blocking the player, good to charge
+                playerSpotted = true;
+                alarm[0] = 1;  
+            }
+        }      
+    }
+}
+
 
 script_execute(m_state);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index == spr_hound_chomp){
+    if (!obj_player.m_hit){
+        if (x &lt; obj_player.x){
+            obj_player.x += 5;
+            obj_player.m_hit = true;
+            obj_player.m_blinking = false;
+        }
+        else if (x &gt; obj_player.x){
+            obj_player.x -= 5;
+            obj_player.m_blinking = true;
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw_set_colour(c_yellow);
+
+//if (image_xscale == 1){ //facing right
+    //draw_rectangle(x - 10, y-8, x+140, y+5, false);
+//}
+//else{ //facing left
+    //draw_rectangle(x+10, y-8, x-140, y+5, false);
+//}
+
+draw_self();
 </string>
           </argument>
         </arguments>

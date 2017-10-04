@@ -106,6 +106,7 @@
       <sprites name="ordinaries">
         <sprites name="Dogs">
           <sprite>sprites\spr_hound_idle</sprite>
+          <sprite>sprites\spr_hound_chomp</sprite>
           <sprite>sprites\spr_hound_sniff</sprite>
           <sprite>sprites\spr_hound_walk</sprite>
         </sprites>
@@ -162,6 +163,7 @@
       <scripts name="Normals">
         <scripts name="Dogs">
           <script>scripts\hound_patrol.gml</script>
+          <script>scripts\hound_chase.gml</script>
           <script>scripts\hound_sniff.gml</script>
           <script>scripts\hound_idle.gml</script>
         </scripts>

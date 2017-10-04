@@ -426,7 +426,7 @@ if (global.dark){
 }
 
 if (m_hit &amp;&amp; !m_blinking){
-    //print("LIGHTS OUT JEW");
+    //print("LIGHTS OUT JEWRIA");
     alarm[5] = room_speed; //blink and invincible period
     sprite_index = spr_playerHurt;
     image_speed = .2;

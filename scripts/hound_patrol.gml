@@ -7,7 +7,6 @@ if (place_meeting(x+xspd, y, obj_solid)){
     image_xscale = move;
     print("now THAT'S what i call move * -1");
     //print(move);
-    xspd = 1;
 }
 
 x += (move) * xspd;
