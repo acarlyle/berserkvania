@@ -57,10 +57,6 @@ var move = -m_leftArrow + m_rightArrow;
 if move != 0 && !m_attacking image_xscale = move; //flip sprite
 m_hspd = move * m_moveSpeed;
     
-//if (m_leftArrow){
-//    print('nig');
-//}
-    
 if (m_vspd < 5) m_vspd += m_grav;
 if (place_meeting(x, y+1, obj_solid)){
     m_vspd = m_spaceBar * -m_jumpSpeed; 

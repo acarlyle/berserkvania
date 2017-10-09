@@ -25,6 +25,7 @@
         <sprite>sprites\spr_solid8x1</sprite>
         <sprites name="Destructible">
           <sprite>sprites\spr_solid1x1_des</sprite>
+          <sprite>sprites\spr_solid1x1_breakable</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -194,6 +195,7 @@
         <object>objects\obj_triDownRight1x1</object>
         <objects name="destructible">
           <object>objects\obj_solid1x1_des</object>
+          <object>objects\obj_solid1x1_breakable</object>
         </objects>
       </objects>
       <object>objects\obj_water</object>
@@ -274,6 +276,9 @@
     <room>rooms\rm_map</room>
     <rooms name="bosses">
       <room>rooms\rm_executioner</room>
+    </rooms>
+    <rooms name="Ability Hall Path Prototype">
+      <room>rooms\ahpp_sword</room>
     </rooms>
   </rooms>
   <help>

@@ -58,7 +58,7 @@ m_moveSpeed = 2;
 m_hspd = 0;
 m_jumpSpeed = 6;
 m_vspd = 0;
-m_grav = .2;
+m_grav = 1;
 m_numDashes = 3;
 m_glowSize = 1;
 

@@ -34,8 +34,8 @@ randomize(); //randomizes seed for random functions
 m_displayx = 0;
 m_displayy = 0;
 m_displayScale = 0;
-m_cellWidth = 180;
-m_cellHeight = 320;
+m_cellWidth = 320;
+m_cellHeight = 180;
 m_piecesUsed = 0;
 
 //Bosses defeated
@@ -46,7 +46,7 @@ global.map = ds_grid_create(100, 100);
 global.drawMap = true;
 global.mapChunkX = 0;
 global.mapChunkY = 0;
-global.currentRoom = rm_pits;
+global.currentRoom = ahpp_sword;
 global.dark = false;
 
 
@@ -62,6 +62,7 @@ for (rmX = 0; rmX &lt; 100; rmX += 1){
       global.map[rmX, rmY] = 0;
    }
 }
+/*
 //spire of chains
 //global.map[50, 48] = scr_strBinToDec(string(01001001));
 global.map[50, 49] = scr_strBinToDec(string(01001001));
@@ -94,6 +95,11 @@ global.map[49, 57] = scr_strBinToDec(string(01000100));
 global.map[50, 57] = scr_strBinToDec(string(01000100));
 global.map[51, 57] = scr_strBinToDec(string(01000100));
 global.map[52, 57] = scr_strBinToDec(string(01000100));
+*/
+
+//ahpp map
+global.map[50, 50] = scr_strBinToDec(string(11011011));
+global.map[50, 51] = scr_strBinToDec(string(11011011));
 
 /* binary room value mapping
 
@@ -150,7 +156,7 @@ for(var yy=500; yy&lt;510; yy++) {
 //show_debug_message(global.map[500,502]);
 
 scr_applyScreenRes();
-room_goto(rm_pits);
+room_goto(global.currentRoom);
 
 
 </string>
@@ -176,7 +182,8 @@ room_goto(rm_pits);
           <argument>
             <kind>1</kind>
             <string>if (instance_number(obj_player) == 0) {
-    player = instance_create(135, 310, obj_player);
+    //player = instance_create(135, 310, obj_player); //rm_pits
+    player = instance_create(128, 112, obj_player);   //ahpp_sword
     //camera = instance_create(player.x, player.y-12, obj_camera);
     with (player) {
         //juststarted = 100;
