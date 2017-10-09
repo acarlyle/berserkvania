@@ -62,24 +62,25 @@ for (rmX = 0; rmX &lt; 100; rmX += 1){
       global.map[rmX, rmY] = 0;
    }
 }
-/*
+
 //spire of chains
 //global.map[50, 48] = scr_strBinToDec(string(01001001));
-global.map[50, 49] = scr_strBinToDec(string(01001001));
-global.map[50, 50] = scr_strBinToDec(string(11001001)); //start cell
-global.map[50, 51] = scr_strBinToDec(string(01001001));
-global.map[50, 52] = scr_strBinToDec(string(01000111));
-global.map[51, 52] = scr_strBinToDec(string(01001011));
+//global.map[50, 49] = scr_strBinToDec(string(01001001));
+//global.map[50, 50] = scr_strBinToDec(string(11001001)); //start cell
+//global.map[50, 51] = scr_strBinToDec(string(01001001));
+//global.map[50, 52] = scr_strBinToDec(string(01000111));
+//global.map[51, 52] = scr_strBinToDec(string(01001011));
 
-global.map[52, 52] = scr_strBinToDec(string(01001010));
+//global.map[52, 52] = scr_strBinToDec(string(01001010));
 
-global.map[53, 52] = scr_strBinToDec(string(01000110));
-global.map[53, 53] = scr_strBinToDec(string(01001001));
-global.map[53, 54] = scr_strBinToDec(string(01001011));
-global.map[53, 55] = scr_strBinToDec(string(01001001));
-global.map[53, 54] = scr_strBinToDec(string(01001011));
+//global.map[53, 52] = scr_strBinToDec(string(01000110));
+//global.map[53, 53] = scr_strBinToDec(string(01001001));
+//global.map[53, 54] = scr_strBinToDec(string(01001011));
+//global.map[53, 55] = scr_strBinToDec(string(01001001));
+//global.map[53, 54] = scr_strBinToDec(string(01001011));
 
-//executioner
+//executioner 
+/*
 global.map[48, 55] = scr_strBinToDec(string(01000000));
 global.map[49, 55] = scr_strBinToDec(string(01000000));
 global.map[50, 55] = scr_strBinToDec(string(01000000));
@@ -98,8 +99,11 @@ global.map[52, 57] = scr_strBinToDec(string(01000100));
 */
 
 //ahpp map
-global.map[50, 50] = scr_strBinToDec(string(11011011));
-global.map[50, 51] = scr_strBinToDec(string(11011011));
+global.map[50, 49] = scr_strBinToDec(string(11001001)); //start cell
+global.map[50, 50] = scr_strBinToDec(string(01000111));
+global.map[51, 50] = scr_strBinToDec(string(01000110));
+global.map[51, 51] = scr_strBinToDec(string(01000111));
+global.map[52, 51] = scr_strBinToDec(string(01001010));
 
 /* binary room value mapping
 

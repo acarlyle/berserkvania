@@ -40,6 +40,7 @@ m_blinking = false;
 
 //unlocked abilities
 m_hasSword = false;
+m_hasMap = false;
 
 //Controls
 m_leftArrow = false;
@@ -143,30 +144,32 @@ for(var yy=0; yy&lt;50; yy++) {
     }
 }*/
 
-//create the surface of the minimap
-var color, piece, door;
-var piecesUsed = 11;
-//surf = surface_create(16*16, 16*18); // (numWidth*tileWidth, numHeight*tileHeight)
-global.mapSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
-surface_set_target(global.mapSurf);
 
-var xCell = xCellPos - 2;
-var yCell = yCellPos - 1;
-for (var xx = 0; xx &lt; 5; xx++){
-    for (var yy = 0; yy &lt; 3; yy++){
-        //if global.map[xCell+xx, yCell+yy] &amp; $C0 == 0 continue; //don't draw unknown rooms
-        if global.map[xCell+xx, yCell+yy] &amp; $C0 == 0 {
-            draw_sprite_ext(spr_blankTile, 0, xx * 16, yy * 18, 1, 1, 0, c_white, 1);
-            continue;
+//if (m_hasMap){
+    //create the surface of the minimap
+    var color, piece, door;
+    var piecesUsed = 11;
+    //surf = surface_create(16*16, 16*18); // (numWidth*tileWidth, numHeight*tileHeight)
+    global.mapSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
+    surface_set_target(global.mapSurf);
+    
+    var xCell = xCellPos - 2;
+    var yCell = yCellPos - 1;
+    for (var xx = 0; xx &lt; 5; xx++){
+        for (var yy = 0; yy &lt; 3; yy++){
+            //if global.map[xCell+xx, yCell+yy] &amp; $C0 == 0 continue; //don't draw unknown rooms
+            if global.map[xCell+xx, yCell+yy] &amp; $C0 == 0 {
+                draw_sprite_ext(spr_blankTile, 0, xx * 16, yy * 18, 1, 1, 0, c_white, 1);
+                continue;
+            }
+            if global.map[xCell+xx, yCell+yy] &amp; $80 color = $ff0000;
+            else color = $8421504; //set the color if room is known
+            door = global.map[xCell+xx, yCell+yy] &gt;&gt; 4 &amp; 3;
+            piece = (global.map[xCell+xx, yCell+yy] &amp; 15) + door * piecesUsed; //you'd define pieces_used 
+            draw_sprite_ext(spr_mapPieces, piece, xx * 16, yy * 18, 1, 1, 0, color, 1);
         }
-        if global.map[xCell+xx, yCell+yy] &amp; $80 color = $ff0000;
-        else color = $8421504; //set the color if room is known
-        door = global.map[xCell+xx, yCell+yy] &gt;&gt; 4 &amp; 3;
-        piece = (global.map[xCell+xx, yCell+yy] &amp; 15) + door * piecesUsed; //you'd define pieces_used 
-        draw_sprite_ext(spr_mapPieces, piece, xx * 16, yy * 18, 1, 1, 0, color, 1);
-    }
-} 
-
+    } 
+//}
 //for blinking rectangle of where you are
 //draw_set_color(c_white);
 //draw_rectangle(xCellPos - 16, yCellPos - 32, xCellPos-6, yCellPos - 16, false); 
@@ -462,8 +465,9 @@ if (sprite_index == spr_playerSwordStab){
     }
 }
 
-
-scr_updateMap();
+if (m_hasMap){
+    scr_updateMap();
+}
 </string>
           </argument>
         </arguments>
@@ -563,10 +567,17 @@ alarm[2] = room_speed * 3;
           <argument>
             <kind>1</kind>
             <string>if (instance_exists(obj_sword)){
+    print("Picked up sword !");
     m_hasSword = true;
     instance_destroy(obj_sword);
     instance_destroy(obj_abilityPickup);
     sprite_index = spr_playerSword;
+}
+if (instance_exists(obj_map)){
+    print("Picked up map !");
+    m_hasMap = true;
+    instance_destroy(obj_map);
+    instance_destroy(obj_abilityPickup);
 }
 </string>
           </argument>
@@ -644,8 +655,9 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
         surface_reset_target();
     }
 }*/
-
-draw_surface(global.mapSurf, 320*global.scaleRes - 100, 20);
+if (m_hasMap){
+    draw_surface(global.mapSurf, 320*global.scaleRes - 100, 20);
+}
 //surface_reset_target();
 
 

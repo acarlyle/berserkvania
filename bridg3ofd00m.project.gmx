@@ -23,9 +23,10 @@
         <sprite>sprites\spr_solid2x2</sprite>
         <sprite>sprites\spr_solid4x1</sprite>
         <sprite>sprites\spr_solid8x1</sprite>
-        <sprites name="Destructible">
+        <sprites name="Special">
           <sprite>sprites\spr_solid1x1_des</sprite>
           <sprite>sprites\spr_solid1x1_breakable</sprite>
+          <sprite>sprites\spr_solid1x1_intangible</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -72,6 +73,7 @@
       <sprite>sprites\spr_blankTile</sprite>
     </sprites>
     <sprites name="abilityPickups">
+      <sprite>sprites\spr_abilityMap</sprite>
       <sprite>sprites\spr_abilityPickup</sprite>
     </sprites>
     <sprites name="Player">
@@ -193,9 +195,10 @@
         <object>objects\obj_solid8x1</object>
         <object>objects\obj_triUpRight1x1</object>
         <object>objects\obj_triDownRight1x1</object>
-        <objects name="destructible">
+        <objects name="Special">
           <object>objects\obj_solid1x1_des</object>
           <object>objects\obj_solid1x1_breakable</object>
+          <object>objects\obj_solid1x1_intangible</object>
         </objects>
       </objects>
       <object>objects\obj_water</object>
@@ -246,6 +249,7 @@
     </objects>
     <objects name="abilityPickups">
       <object>objects\obj_sword</object>
+      <object>objects\obj_map</object>
     </objects>
     <object>objects\obj_hitbox</object>
     <objects name="lighting">
@@ -279,6 +283,8 @@
     </rooms>
     <rooms name="Ability Hall Path Prototype">
       <room>rooms\ahpp_sword</room>
+      <room>rooms\ahpp_map</room>
+      <room>rooms\ahpp_base</room>
     </rooms>
   </rooms>
   <help>
