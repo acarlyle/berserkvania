@@ -29,7 +29,7 @@ if(keyboard_check(vk_control)){
     }
     
     if (m_x && m_canShoot){ //shooting
-        scr_fireRocket();
+        scr_fireCannon();
         alarm[1] = room_speed / 2; //cooldown
     }
     

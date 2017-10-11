@@ -26,6 +26,7 @@
         <sprites name="Special">
           <sprite>sprites\spr_solid1x1_des</sprite>
           <sprite>sprites\spr_solid1x1_breakable</sprite>
+          <sprite>sprites\spr_solid1x1_zappable</sprite>
           <sprite>sprites\spr_solid1x1_intangible</sprite>
         </sprites>
       </sprites>
@@ -74,6 +75,7 @@
     </sprites>
     <sprites name="abilityPickups">
       <sprite>sprites\spr_abilityMap</sprite>
+      <sprite>sprites\spr_abilityEnergyCannon</sprite>
       <sprite>sprites\spr_abilityPickup</sprite>
     </sprites>
     <sprites name="Player">
@@ -124,7 +126,6 @@
     <script>scripts\scr_jumpState.gml</script>
     <script>scripts\scr_crouchState.gml</script>
     <script>scripts\scr_dashState.gml</script>
-    <script>scripts\scr_fireRocket.gml</script>
     <script>scripts\scr_rotateBazooka.gml</script>
     <script>scripts\scr_akbar.gml</script>
     <script>scripts\scr_drawHUD.gml</script>
@@ -173,6 +174,9 @@
         <script>scripts\scr_engageAIBehavior.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Combat">
+      <script>scripts\scr_fireCannon.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Parents">
@@ -198,6 +202,7 @@
         <objects name="Special">
           <object>objects\obj_solid1x1_des</object>
           <object>objects\obj_solid1x1_breakable</object>
+          <object>objects\obj_solid1x1_zappable</object>
           <object>objects\obj_solid1x1_intangible</object>
         </objects>
       </objects>
@@ -250,6 +255,7 @@
     <objects name="abilityPickups">
       <object>objects\obj_sword</object>
       <object>objects\obj_map</object>
+      <object>objects\obj_energyCannon</object>
     </objects>
     <object>objects\obj_hitbox</object>
     <objects name="lighting">
@@ -285,6 +291,7 @@
       <room>rooms\ahpp_sword</room>
       <room>rooms\ahpp_map</room>
       <room>rooms\ahpp_base</room>
+      <room>rooms\ahpp_energyCannon</room>
       <room>rooms\ahpp_funroom</room>
     </rooms>
   </rooms>

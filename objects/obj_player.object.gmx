@@ -41,6 +41,7 @@ m_blinking = false;
 //unlocked abilities
 m_hasSword = false;
 m_hasMap = false;
+m_hasEnergyCannon = false;
 
 //Controls
 m_leftArrow = false;
@@ -580,6 +581,12 @@ if (instance_exists(obj_map)){
     print("Picked up map !");
     m_hasMap = true;
     instance_destroy(obj_map);
+    instance_destroy(obj_abilityPickup);
+}
+if (instance_exists(obj_energyCannon)){
+    print("Picked up energy cannon !");
+    m_hasEnergyCannon = true;
+    instance_destroy(obj_energyCannon);
     instance_destroy(obj_abilityPickup);
 }
 </string>

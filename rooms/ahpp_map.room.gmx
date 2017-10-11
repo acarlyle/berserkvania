@@ -87,7 +87,7 @@ global.updateMap = true;</code>
     <instance objName="obj_solid4x1" x="416" y="272" name="inst_1CF67928" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid4x1" x="480" y="272" name="inst_086D9E92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1" x="528" y="272" name="inst_F6517FCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="480" y="288" name="inst_D3069597" locked="0" code="target_x = 32;&#xA;target_y = 48;&#xA;&#xA;target_r = ahpp_map;&#xA;" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gotoRoom" x="352" y="288" name="inst_D3069597" locked="0" code="target_x = 16;&#xA;target_y = 304;&#xA;&#xA;target_r = ahpp_energyCannon;&#xA;" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1_intangible" x="320" y="304" name="inst_5CC6D4D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1_intangible" x="320" y="320" name="inst_8FBC6BD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid1x1" x="320" y="288" name="inst_08749DFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
