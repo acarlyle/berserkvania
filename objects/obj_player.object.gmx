@@ -57,7 +57,10 @@ m_mKey = false;
 
 m_moveSpeed = 2;
 m_hspd = 0;
-m_jumpSpeed = 6;
+m_hspdCarry = 0;
+m_jumpSpeed = 10;
+m_jumpsMax = 1; //upgradable to 2
+m_jumps = 0;
 m_vspd = 0;
 m_grav = 1;
 m_numDashes = 3;
