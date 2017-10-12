@@ -6,10 +6,10 @@ scr_getInput();
 //    m_state = scr_jumpState;
 //}
 if (m_leftArrow){
-    phy_position_x -= m_hspd * 3;
+    x -= m_hspd * 3;
 }
 else if (m_rightArrow){
-    phy_position_x += m_hspd * 3;
+    x += m_hspd * 3;
 }
 
 //Create dash effect

@@ -65,7 +65,8 @@ m_jumpsMax = 1; //upgradable to 2
 m_jumps = 0;
 m_vspd = 0;
 m_grav = 1;
-m_numDashes = 3;
+m_numDashes = 1;
+m_maxDashes = 1;
 m_glowSize = 1;
 
 //player starting cell
@@ -189,6 +190,7 @@ for(var yy=0; yy&lt;50; yy++) {
 
 surface_reset_target();
 
+global.hudSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
 light = surface_create(320*global.scaleRes, 180*global.scaleRes);
 </string>
           </argument>
@@ -266,7 +268,9 @@ sprite_index = spr_playerSword;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>m_numDashes = 3;
+            <string>///dash fully reset
+
+m_numDashes = m_maxDashes;
 m_canDash = true;
 </string>
           </argument>
@@ -290,7 +294,9 @@ m_canDash = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>m_canMove = true;
+            <string>///can move again
+
+m_canMove = true;
 </string>
           </argument>
         </arguments>
@@ -649,9 +655,33 @@ m_falling = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*var i;
+            <string>//draw HUD (shouldn't be doing this every frame....)
+var i;
 var offSet = 20;
+if (surface_exists(global.hudSurf)){
+    surface_set_target(global.hudSurf);
+    draw_clear_alpha(c_white,0);
+    surface_reset_target();
+    surface_set_target(global.hudSurf);
+    
+    for (i = 0; i &lt; m_maxDashes; i++){
+        if (i &gt;= m_numDashes){
+            draw_sprite(spr_dashBoxUsed, -1, 100 - offSet, 60); 
+            print("USED!");
+        }
+        else {
+            draw_sprite(spr_dashBoxFull, -1, 100 - offSet,  60); 
+        }
+        offSet += 20;
+    }
+   
+} 
 
+//print(m_numDashes)
+
+surface_reset_target();
+
+/*
 for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
     //show_debug_message("NumDashes: " + string(m_numDashes));
     //show_debug_message("        i: " + string(i));  
@@ -678,8 +708,13 @@ for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
         surface_reset_target();
     }
 }*/
+
 if (m_hasMap){
     draw_surface(global.mapSurf, 320*global.scaleRes - 100, 20);
+}
+
+if (m_canMove){
+    draw_surface(global.hudSurf, 100, 20);
 }
 //surface_reset_target();
 

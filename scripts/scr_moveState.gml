@@ -127,12 +127,12 @@ if (m_x && m_canShoot && m_hasEnergyCannon){ //shooting
     scr_fireCannon();
     alarm[1] = room_speed / 3; //cooldown
 }
-/*
+
 if (m_shift && m_hspd > 0 && m_canDash && (m_leftArrow || m_rightArrow)){ //dash
     m_state = scr_dashState;
     alarm[0] = room_speed / 8; //how long to dash
 }
-
+/*
 if (m_mKey){
     //m_state = scr_displayMap;
 }
