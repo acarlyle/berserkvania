@@ -42,6 +42,7 @@ m_blinking = false;
 m_hasSword = false;
 m_hasMap = false;
 m_hasEnergyCannon = false;
+m_hasDash = false;
 
 //Controls
 m_leftArrow = false;
@@ -587,6 +588,18 @@ if (instance_exists(obj_energyCannon)){
     print("Picked up energy cannon !");
     m_hasEnergyCannon = true;
     instance_destroy(obj_energyCannon);
+    instance_destroy(obj_abilityPickup);
+}
+if (instance_exists(obj_doubleJump)){
+    print("Picked up double jump !");
+    m_jumpsMax = 2;
+    instance_destroy(obj_doubleJump);
+    instance_destroy(obj_abilityPickup);
+}
+if (instance_exists(obj_dash)){
+    print("Picked up dash !");
+    m_hasDash = true;
+    instance_destroy(obj_dash);
     instance_destroy(obj_abilityPickup);
 }
 </string>

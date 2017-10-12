@@ -75,6 +75,8 @@
     </sprites>
     <sprites name="abilityPickups">
       <sprite>sprites\spr_abilityMap</sprite>
+      <sprite>sprites\spr_abilityDoubleJump</sprite>
+      <sprite>sprites\spr_abilityDash</sprite>
       <sprite>sprites\spr_abilityEnergyCannon</sprite>
       <sprite>sprites\spr_abilityPickup</sprite>
     </sprites>
@@ -255,6 +257,8 @@
     <objects name="abilityPickups">
       <object>objects\obj_sword</object>
       <object>objects\obj_map</object>
+      <object>objects\obj_doubleJump</object>
+      <object>objects\obj_dash</object>
       <object>objects\obj_energyCannon</object>
     </objects>
     <object>objects\obj_hitbox</object>
@@ -292,6 +296,7 @@
       <room>rooms\ahpp_map</room>
       <room>rooms\ahpp_base</room>
       <room>rooms\ahpp_energyCannon</room>
+      <room>rooms\ahpp_doubleJump</room>
       <room>rooms\ahpp_funroom</room>
     </rooms>
   </rooms>

@@ -122,8 +122,8 @@ else
 }*/
 
 
-
-if (m_x && m_canShoot){ //shooting
+//fire projectile
+if (m_x && m_canShoot && m_hasEnergyCannon){ //shooting
     scr_fireCannon();
     alarm[1] = room_speed / 3; //cooldown
 }
