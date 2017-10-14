@@ -37,12 +37,13 @@ m_attacking = false;
 m_underwater = false;
 m_hit = false;
 m_blinking = false;
+m_flipped = false;
 
 //unlocked abilities
 m_hasSword = false;
 m_hasMap = false;
 m_hasEnergyCannon = false;
-m_hasDash = false;
+m_hasDash = true;
 
 //Controls
 m_leftArrow = false;
@@ -190,7 +191,7 @@ for(var yy=0; yy&lt;50; yy++) {
 
 surface_reset_target();
 
-global.hudSurf = surface_create(320*global.scaleRes, 180*global.scaleRes);
+global.dashHUD = surface_create(320*global.scaleRes, 180*global.scaleRes);
 light = surface_create(320*global.scaleRes, 180*global.scaleRes);
 </string>
           </argument>
@@ -479,6 +480,9 @@ if (sprite_index == spr_playerSwordStab){
 if (m_hasMap){
     scr_updateMap();
 }
+if (m_hasDash){
+    scr_updateDashHUD();
+}
 </string>
           </argument>
         </arguments>
@@ -655,33 +659,7 @@ m_falling = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw HUD (shouldn't be doing this every frame....)
-var i;
-var offSet = 20;
-if (surface_exists(global.hudSurf)){
-    surface_set_target(global.hudSurf);
-    draw_clear_alpha(c_white,0);
-    surface_reset_target();
-    surface_set_target(global.hudSurf);
-    
-    for (i = 0; i &lt; m_maxDashes; i++){
-        if (i &gt;= m_numDashes){
-            draw_sprite(spr_dashBoxUsed, -1, 100 - offSet, 60); 
-            print("USED!");
-        }
-        else {
-            draw_sprite(spr_dashBoxFull, -1, 100 - offSet,  60); 
-        }
-        offSet += 20;
-    }
-   
-} 
-
-//print(m_numDashes)
-
-surface_reset_target();
-
-/*
+            <string>/*
 for (i = 0; i &lt; 3; i++){ //hard-coded badded &gt;:c
     //show_debug_message("NumDashes: " + string(m_numDashes));
     //show_debug_message("        i: " + string(i));  
@@ -714,7 +692,9 @@ if (m_hasMap){
 }
 
 if (m_canMove){
-    draw_surface(global.hudSurf, 100, 20);
+    //draw dash HUD
+    draw_surface(global.dashHUD, 100, 20);
+    print('draw surf');
 }
 //surface_reset_target();
 

@@ -55,6 +55,15 @@ if (m_underwater){
 
 var move = -m_leftArrow + m_rightArrow;
 if move != 0 && !m_attacking image_xscale = move; //flip sprite
+if (image_xscale == 1){
+    m_facingRight = true;
+    m_facingLeft = false;
+}
+else{
+    m_facingRight = false;
+    m_facingLeft = true;
+}
+
 m_hspd = move * m_moveSpeed;
 if (m_vspd < 10) m_vspd += m_grav;
 
@@ -128,7 +137,8 @@ if (m_x && m_canShoot && m_hasEnergyCannon){ //shooting
     alarm[1] = room_speed / 3; //cooldown
 }
 
-if (m_shift && m_hspd > 0 && m_canDash && (m_leftArrow || m_rightArrow)){ //dash
+//if (m_shift && m_canDash){ //dash
+if (m_shift && m_canDash && (m_leftArrow || m_rightArrow)){ //dash
     m_state = scr_dashState;
     alarm[0] = room_speed / 8; //how long to dash
 }

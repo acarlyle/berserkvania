@@ -5,11 +5,23 @@ scr_getInput();
 //if (m_spaceBar){
 //    m_state = scr_jumpState;
 //}
-if (m_leftArrow){
-    x -= m_hspd * 3;
+
+//x += m_hspd * 3;
+
+var hspdBoost = m_hspd * 3;
+
+//Horizontal Collision
+if (place_meeting(x+hspdBoost, y, obj_solid))
+{
+    while(!place_meeting(x+sign(hspdBoost), y, obj_solid))
+    {
+        x += sign(hspdBoost);
+    }
+    hspdBoost = 0;
+    m_hspd = 0;
 }
-else if (m_rightArrow){
-    x += m_hspd * 3;
+if (m_canMove){
+    x += hspdBoost;
 }
 
 //Create dash effect

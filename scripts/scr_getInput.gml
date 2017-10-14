@@ -12,7 +12,7 @@ m_ctrl = keyboard_check(vk_control);
 m_z = keyboard_check(ord('Z')) || (gamepad_button_check_pressed(0, gp_face2));
 m_x = keyboard_check(ord('X'));
 m_c = keyboard_check(ord('C'));
-m_shift = keyboard_check(vk_shift);
+m_shift = keyboard_check_pressed(vk_shift);
 m_mKey = keyboard_check(ord('M'));
 
 if (vk_anykey) global.moving = true;
