@@ -125,6 +125,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_moveState.gml</script>
+    <script>scripts\scr_moveState_bkp.gml</script>
     <script>scripts\scr_getInput.gml</script>
     <script>scripts\scr_jumpState.gml</script>
     <script>scripts\scr_crouchState.gml</script>
@@ -181,6 +182,7 @@
     <scripts name="Combat">
       <script>scripts\scr_fireCannon.gml</script>
     </scripts>
+    <script>scripts\scr_bunnyHop.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Parents">

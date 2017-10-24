@@ -1,16 +1,8 @@
-///scr_dashState
+///scr_bunnyHop
 
 scr_getInput();
-
-//if (m_spaceBar){
-//    m_state = scr_jumpState;
-//}
-
-//x += m_hspd * 3;
-
 var hspdBoost = m_hspd * 3;
-
-
+if (m_vspd < 10) m_vspd += m_grav;
 
 //Jumps - If touching the ground, 
 if (place_meeting(x, y+1, obj_solid)){
@@ -26,8 +18,6 @@ if (m_spaceBar) && (m_jumps > 0){
     m_vspd = -m_jumpSpeed / 2;
 }
 if (m_vspd < 0) && (!m_spaceBarHeld) m_vspd = max(m_vspd, 0);
-
-
 
 //Horizontal Collision
 if (place_meeting(x+hspdBoost, y, obj_solid))
@@ -54,8 +44,3 @@ if (place_meeting(x, y+m_vspd, obj_solid))
     m_vspd = 0;
 }
 y += m_vspd;
-
-//Create dash effect
-var dash = instance_create(x, y, obj_playerDashEffect);
-dash.sprite_index = sprite_index;
-dash.image_index = image_index;

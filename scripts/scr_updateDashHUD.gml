@@ -17,11 +17,10 @@ if (surface_exists(global.dashHUD)){
         }
         offSet += 20;
     }
-    print("drew!");
    
 } 
 else{
-    print("suirface doesn't exist! :(");
+    print("dashHUD surface doesn't exist! :(");
 }
 
 //print(m_numDashes)

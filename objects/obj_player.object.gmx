@@ -61,13 +61,13 @@ m_mKey = false;
 m_moveSpeed = 2;
 m_hspd = 0;
 m_hspdCarry = 0;
-m_jumpSpeed = 10;
-m_jumpsMax = 1; //upgradable to 2
+m_jumpSpeed = 6;
+m_jumpsMax = 2; //upgradable to 2
 m_jumps = 0;
 m_vspd = 0;
-m_grav = 1;
-m_numDashes = 1;
-m_maxDashes = 1;
+m_grav = .2;
+m_numDashes = 3;
+m_maxDashes = 3;
 m_glowSize = 1;
 
 //player starting cell
@@ -355,7 +355,10 @@ else{
     m_canDash = true;
 }
 alarm[3] = room_speed;
-m_state = scr_moveState;
+//m_state = scr_moveState;
+m_state = scr_bunnyHop;
+
+print(m_hspd);
 </string>
           </argument>
         </arguments>
@@ -694,7 +697,6 @@ if (m_hasMap){
 if (m_canMove){
     //draw dash HUD
     draw_surface(global.dashHUD, 100, 20);
-    print('draw surf');
 }
 //surface_reset_target();
 
