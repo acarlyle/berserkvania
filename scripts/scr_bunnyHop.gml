@@ -1,7 +1,7 @@
 ///scr_bunnyHop
 
 scr_getInput();
-var hspdBoost = m_hspd * 3;
+//var m_hspdBoost = m_hspd * 3;
 if (m_vspd < 10) m_vspd += m_grav;
 
 //Jumps - If touching the ground, 
@@ -20,18 +20,18 @@ if (m_spaceBar) && (m_jumps > 0){
 if (m_vspd < 0) && (!m_spaceBarHeld) m_vspd = max(m_vspd, 0);
 
 //Horizontal Collision
-if (place_meeting(x+hspdBoost, y, obj_solid))
+if (place_meeting(x+m_hspdBoost, y, obj_solid))
 {
-    while(!place_meeting(x+sign(hspdBoost), y, obj_solid))
+    while(!place_meeting(x+sign(m_hspdBoost), y, obj_solid))
     {
-        x += sign(hspdBoost);
+        x += sign(m_hspdBoost);
     }
-    hspdBoost = 0;
+    m_hspdBoost = 0;
     m_hspd = 0;
 }
 if (m_canMove){
-    x += hspdBoost;
-    //print(hspdBoost);
+    x += m_hspdBoost;
+    //print(m_hspdBoost);
 }
 
 //Vertical Collision

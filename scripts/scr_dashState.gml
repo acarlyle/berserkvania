@@ -6,11 +6,6 @@ scr_getInput();
 //    m_state = scr_jumpState;
 //}
 
-//x += m_hspd * 3;
-
-var hspdBoost = m_hspd * 3;
-
-
 
 //Jumps - If touching the ground, 
 if (place_meeting(x, y+1, obj_solid)){
@@ -30,32 +25,34 @@ if (m_vspd < 0) && (!m_spaceBarHeld) m_vspd = max(m_vspd, 0);
 
 
 //Horizontal Collision
-if (place_meeting(x+hspdBoost, y, obj_solid))
+if (place_meeting(x+m_hspdBoost, y, obj_solid))
 {
-    while(!place_meeting(x+sign(hspdBoost), y, obj_solid))
+    while(!place_meeting(x+sign(m_hspdBoost), y, obj_solid))
     {
-        x += sign(hspdBoost);
+        x += sign(m_hspdBoost);
     }
-    hspdBoost = 0;
+    m_hspdBoost = 0;
     m_hspd = 0;
 }
 if (m_canMove){
-    x += hspdBoost;
-    //print(hspdBoost);
+    x += m_hspdBoost;
 }
 
 //Vertical Collision
-if (place_meeting(x, y+m_vspd, obj_solid))
+/*if (place_meeting(x, y+m_vspd, obj_solid))
 {
     while(!place_meeting(x, y+sign(m_vspd), obj_solid))
     {
         y += sign(m_vspd);
     }
+    print("Touching the ground");
     m_vspd = 0;
 }
-y += m_vspd;
+y += m_vspd;*/
 
 //Create dash effect
 var dash = instance_create(x, y, obj_playerDashEffect);
 dash.sprite_index = sprite_index;
 dash.image_index = image_index;
+
+//m_hspdBoost -= sign(m_hspdBoost);

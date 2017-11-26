@@ -61,6 +61,7 @@ m_mKey = false;
 m_moveSpeed = 2;
 m_hspd = 0;
 m_hspdCarry = 0;
+m_hspdBoost = 0;
 m_jumpSpeed = 6;
 m_jumpsMax = 2; //upgradable to 2
 m_jumps = 0;
@@ -193,6 +194,31 @@ surface_reset_target();
 
 global.dashHUD = surface_create(320*global.scaleRes, 180*global.scaleRes);
 light = surface_create(320*global.scaleRes, 180*global.scaleRes);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///imd. return to normie movement
+
+m_state = scr_moveState;
 </string>
           </argument>
         </arguments>
@@ -356,7 +382,10 @@ else{
 }
 alarm[3] = room_speed;
 //m_state = scr_moveState;
-m_state = scr_bunnyHop;
+//m_state = scr_bunnyHop;
+m_state = scr_slide;
+print("Cue slide state");
+alarm[11] = room_speed/2;
 
 print(m_hspd);
 </string>

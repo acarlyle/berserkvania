@@ -194,7 +194,8 @@ room_goto(global.currentRoom);
             <kind>1</kind>
             <string>if (instance_number(obj_player) == 0) {
     //player = instance_create(135, 310, obj_player); //rm_pits
-    player = instance_create(128+320, 112, obj_player);   //ahpp_sword
+    //player = instance_create(128+320, 112, obj_player);   //ahpp_sword
+    player = instance_create(128+320, 320, obj_player);   //bottom of ahpp_sword
     //camera = instance_create(player.x, player.y-12, obj_camera);
     with (player) {
         //juststarted = 100;
