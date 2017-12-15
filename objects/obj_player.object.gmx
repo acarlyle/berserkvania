@@ -383,9 +383,16 @@ else{
 alarm[3] = room_speed;
 //m_state = scr_moveState;
 //m_state = scr_bunnyHop;
-m_state = scr_slide;
-print("Cue slide state");
-alarm[11] = room_speed/2;
+
+//if we're touching the ground return to move state
+if (place_meeting(x, y+1, obj_solid)){
+    m_state = scr_moveState;
+}
+else{ //otherwise enter bunnyhop mode
+    m_state = scr_slide;
+    print("Cue slide state");
+    //alarm[11] = room_speed/2;
+}
 
 print(m_hspd);
 </string>

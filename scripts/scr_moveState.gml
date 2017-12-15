@@ -86,7 +86,7 @@ if (m_shift && m_canDash && (m_leftArrow || m_rightArrow)){ //dash
     //print(hspdFinal);
     m_state = scr_dashState;
     m_hspdBoost = m_hspd * 3;
-    alarm[0] = room_speed / 4; //how long to dash
+    alarm[0] = room_speed / 2; //how long to dash
 }
 
 //if (m_mKey){

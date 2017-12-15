@@ -1,5 +1,7 @@
 ///scr_jumpState
 
+// NO LONGER USED!!!
+
 scr_getInput();
 
 //show_debug_message('jump jump trampoline')

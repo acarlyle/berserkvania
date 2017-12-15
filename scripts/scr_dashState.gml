@@ -6,6 +6,7 @@ scr_getInput();
 //    m_state = scr_jumpState;
 //}
 
+if (m_vspd < 10) m_vspd += m_grav;
 
 //Jumps - If touching the ground, 
 if (place_meeting(x, y+1, obj_solid)){
@@ -39,7 +40,7 @@ if (m_canMove){
 }
 
 //Vertical Collision
-/*if (place_meeting(x, y+m_vspd, obj_solid))
+if (place_meeting(x, y+m_vspd, obj_solid))
 {
     while(!place_meeting(x, y+sign(m_vspd), obj_solid))
     {
@@ -48,7 +49,7 @@ if (m_canMove){
     print("Touching the ground");
     m_vspd = 0;
 }
-y += m_vspd;*/
+y += m_vspd;
 
 //Create dash effect
 var dash = instance_create(x, y, obj_playerDashEffect);
